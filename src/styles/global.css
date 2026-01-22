@@ -1,0 +1,27 @@
+:root {
+  --bg-color: #0f0f13;
+  --text-color: #e0e0e0;
+  --accent-color: #00ff9d; /* Neon Green */
+  --secondary-color: #bd00ff; /* Neon Purple */
+  --error-color: #ff0055;
+  --panel-bg: #1a1a20;
+  --border-color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
