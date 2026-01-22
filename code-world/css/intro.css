@@ -1,0 +1,337 @@
+/* ============================================
+   CodeWorld - Intro/Presentation Screen Styles
+   ============================================ */
+
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.intro-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(157, 0, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.intro-container {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Intro Content Slides */
+.intro-content {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    animation: slideUp 0.5s ease;
+}
+
+.intro-slide.active {
+    display: flex;
+}
+
+.intro-slide .slide-icon {
+    font-size: 80px;
+    margin-bottom: var(--spacing-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.intro-slide .slide-title {
+    font-family: var(--font-pixel);
+    font-size: 24px;
+    color: var(--accent-primary);
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    margin-bottom: var(--spacing-sm);
+}
+
+.intro-slide .slide-text {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.intro-slide .slide-text strong {
+    color: var(--accent-primary);
+}
+
+.intro-slide .slide-text .highlight {
+    color: var(--neon-pink);
+}
+
+/* Code Preview in Intro */
+.intro-code-preview {
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: left;
+    margin-top: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+    max-width: 500px;
+}
+
+.intro-code-preview::before {
+    content: 'main.js';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--accent-primary);
+    color: var(--bg-dark);
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    padding: 4px 8px;
+}
+
+.intro-code-preview code {
+    font-family: var(--font-code);
+    font-size: 14px;
+    color: var(--text-primary);
+    display: block;
+    white-space: pre;
+}
+
+.intro-code-preview .code-keyword {
+    color: var(--neon-pink);
+}
+
+.intro-code-preview .code-function {
+    color: var(--neon-cyan);
+}
+
+.intro-code-preview .code-string {
+    color: var(--neon-green);
+}
+
+.intro-code-preview .code-number {
+    color: var(--neon-orange);
+}
+
+.intro-code-preview .code-comment {
+    color: var(--text-muted);
+}
+
+/* Animated typing effect container */
+.typing-demo {
+    overflow: hidden;
+    border-right: 2px solid var(--accent-primary);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent-primary); }
+}
+
+/* Features List */
+.intro-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.intro-feature {
+    background: var(--bg-card);
+    border: 1px solid var(--text-muted);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.intro-feature:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.1);
+}
+
+.intro-feature .feature-icon {
+    font-size: 36px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.intro-feature .feature-title {
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.intro-feature .feature-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Intro Navigation */
+.intro-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+.intro-dots {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.intro-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--bg-tertiary);
+    border: 2px solid var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.intro-dot:hover {
+    border-color: var(--accent-primary);
+}
+
+.intro-dot.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+/* Final Slide - Start Button */
+.start-button {
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    color: var(--bg-dark);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 20px var(--neon-cyan),
+        0 0 40px var(--neon-cyan),
+        0 0 60px var(--neon-cyan);
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+/* Progress indicator for intro */
+.intro-progress {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.intro-progress-segment {
+    width: 30px;
+    height: 4px;
+    background: var(--bg-tertiary);
+    transition: background var(--transition-normal);
+}
+
+.intro-progress-segment.filled {
+    background: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-slide .slide-icon {
+        font-size: 60px;
+    }
+    
+    .intro-slide .slide-title {
+        font-size: 18px;
+    }
+    
+    .intro-slide .slide-text {
+        font-size: 16px;
+    }
+    
+    .intro-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-navigation {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .intro-dots {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-slide .slide-title {
+        font-size: 14px;
+    }
+    
+    .intro-slide .slide-text {
+        font-size: 14px;
+    }
+    
+    .intro-code-preview {
+        padding: var(--spacing-md);
+    }
+    
+    .intro-code-preview code {
+        font-size: 12px;
+    }
+}

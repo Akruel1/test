@@ -1,0 +1,300 @@
+/* ============================================
+   CodeWorld - Console Output Styles
+   ============================================ */
+
+.console-area {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-dark);
+    border: 2px solid var(--bg-tertiary);
+    border-top: none;
+    margin: 0 var(--spacing-md) var(--spacing-md);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.console-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--bg-tertiary);
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.clear-btn {
+    font-family: var(--font-code);
+    font-size: 10px;
+    padding: 4px 8px;
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+}
+
+.clear-btn:hover {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.console-output {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-sm);
+    font-family: var(--font-code);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Console Line Types */
+.console-line {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: 2px;
+    word-break: break-word;
+    animation: slideUp 0.2s ease;
+}
+
+.console-line.system {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.console-line.log {
+    color: var(--text-primary);
+}
+
+.console-line.info {
+    color: var(--neon-cyan);
+}
+
+.console-line.info::before {
+    content: 'ℹ ';
+}
+
+.console-line.success {
+    color: var(--accent-success);
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.console-line.success::before {
+    content: '✓ ';
+}
+
+.console-line.warning {
+    color: var(--accent-warning);
+    background: rgba(255, 255, 0, 0.1);
+}
+
+.console-line.warning::before {
+    content: '⚠ ';
+}
+
+.console-line.error {
+    color: var(--accent-error);
+    background: rgba(255, 0, 68, 0.1);
+}
+
+.console-line.error::before {
+    content: '✕ ';
+}
+
+.console-line.game-event {
+    color: var(--neon-purple);
+    background: rgba(157, 0, 255, 0.1);
+    border-left: 3px solid var(--neon-purple);
+}
+
+.console-line.game-event::before {
+    content: '🎮 ';
+}
+
+.console-line.player-action {
+    color: var(--neon-cyan);
+    background: rgba(0, 245, 255, 0.1);
+    border-left: 3px solid var(--neon-cyan);
+}
+
+.console-line.player-action::before {
+    content: '👤 ';
+}
+
+.console-line.world-event {
+    color: var(--neon-pink);
+    background: rgba(255, 0, 255, 0.1);
+    border-left: 3px solid var(--neon-pink);
+}
+
+.console-line.world-event::before {
+    content: '🌍 ';
+}
+
+/* Timestamp */
+.console-line .timestamp {
+    color: var(--text-muted);
+    font-size: 10px;
+    margin-right: var(--spacing-sm);
+}
+
+/* Stack Trace */
+.console-stack {
+    margin-left: var(--spacing-lg);
+    padding: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.console-stack-line {
+    padding: 2px 0;
+}
+
+.console-stack-line:hover {
+    color: var(--accent-primary);
+    cursor: pointer;
+}
+
+/* Object Inspection */
+.console-object {
+    cursor: pointer;
+}
+
+.console-object::before {
+    content: '▶ ';
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.console-object.expanded::before {
+    content: '▼ ';
+}
+
+.console-object-content {
+    display: none;
+    margin-left: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+}
+
+.console-object.expanded .console-object-content {
+    display: block;
+}
+
+.console-object-key {
+    color: var(--neon-purple);
+}
+
+.console-object-value {
+    color: var(--text-primary);
+}
+
+.console-object-value.string {
+    color: var(--neon-green);
+}
+
+.console-object-value.number {
+    color: var(--neon-orange);
+}
+
+.console-object-value.boolean {
+    color: var(--neon-cyan);
+}
+
+/* Input Line (for interactive console) */
+.console-input-line {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+.console-prompt {
+    color: var(--accent-primary);
+    margin-right: var(--spacing-sm);
+    font-family: var(--font-code);
+    font-size: 13px;
+}
+
+.console-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: var(--font-code);
+    font-size: 13px;
+}
+
+.console-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Game-specific messages */
+.console-line.level-complete {
+    color: var(--neon-yellow);
+    background: linear-gradient(90deg, rgba(255, 255, 0, 0.1), transparent);
+    border-left: 3px solid var(--neon-yellow);
+    font-weight: bold;
+}
+
+.console-line.level-complete::before {
+    content: '🎉 ';
+}
+
+.console-line.hint {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--text-muted);
+    font-style: italic;
+}
+
+.console-line.hint::before {
+    content: '💡 ';
+}
+
+/* Animations */
+@keyframes consoleSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.console-line {
+    animation: consoleSlide 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .console-area {
+        height: 150px;
+        margin: 0 var(--spacing-sm) var(--spacing-sm);
+    }
+    
+    .console-output {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .console-area {
+        height: 120px;
+    }
+    
+    .console-output {
+        font-size: 11px;
+    }
+    
+    .console-line {
+        padding: 2px var(--spacing-xs);
+    }
+}

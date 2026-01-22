@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWorld - Программируемая Вселенная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/console.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-container">
+            <div class="pixel-logo">
+                <span class="logo-text">CODE</span>
+                <span class="logo-text accent">WORLD</span>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <div class="loading-text">Инициализация мира...</div>
+            </div>
+            <div class="pixel-art-decoration">
+                <div class="pixel-character"></div>
+            </div>
+        </div>
+        <div class="particles-container" id="particles"></div>
+    </div>
+
+    <!-- Intro/Presentation Screen -->
+    <div id="intro-screen" class="intro-screen hidden">
+        <div class="intro-container">
+            <div class="intro-content" id="intro-content">
+                <!-- Slides will be inserted here -->
+            </div>
+            <div class="intro-navigation">
+                <button id="intro-skip" class="pixel-button">Пропустить</button>
+                <div class="intro-dots" id="intro-dots"></div>
+                <button id="intro-next" class="pixel-button primary">Далее</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="game-screen hidden">
+        <!-- Top Bar -->
+        <header class="game-header">
+            <div class="header-left">
+                <div class="game-logo">
+                    <span>CODE</span><span class="accent">WORLD</span>
+                </div>
+                <div class="level-info">
+                    <span class="level-badge" id="current-level">Уровень 1</span>
+                    <span class="level-name" id="level-name">Первые шаги</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="javascript">JavaScript</button>
+                    <button class="lang-btn" data-lang="python">Python</button>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-value" id="user-points">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-value" id="user-achievements">0</span>
+                    </div>
+                </div>
+                <button id="menu-btn" class="icon-button">☰</button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="game-main">
+            <!-- Game Canvas Area -->
+            <section class="game-area">
+                <div class="game-canvas-container">
+                    <canvas id="game-canvas"></canvas>
+                    <div class="game-overlay" id="game-overlay"></div>
+                </div>
+                <!-- Task Panel -->
+                <div class="task-panel" id="task-panel">
+                    <div class="task-header">
+                        <h3>📋 Задание</h3>
+                        <button class="collapse-btn" id="collapse-task">▼</button>
+                    </div>
+                    <div class="task-content" id="task-content">
+                        <p class="task-description">Добро пожаловать в CodeWorld!</p>
+                        <p class="task-hint">Напиши код, чтобы управлять персонажем.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Editor Area -->
+            <section class="editor-area">
+                <div class="editor-tabs">
+                    <div class="tab active">main.js</div>
+                    <button class="run-button" id="run-code">
+                        <span class="run-icon">▶</span>
+                        <span>Запустить</span>
+                    </button>
+                    <button class="stop-button" id="stop-code">
+                        <span class="stop-icon">■</span>
+                        <span>Стоп</span>
+                    </button>
+                </div>
+                <div class="editor-container" id="editor-container">
+                    <textarea id="code-editor" spellcheck="false"></textarea>
+                </div>
+                <!-- Console Output -->
+                <div class="console-area">
+                    <div class="console-header">
+                        <span>💻 Консоль</span>
+                        <button id="clear-console" class="clear-btn">Очистить</button>
+                    </div>
+                    <div class="console-output" id="console-output">
+                        <div class="console-line system">Система готова. Напишите код и нажмите "Запустить".</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Side Menu -->
+        <aside class="side-menu hidden" id="side-menu">
+            <div class="menu-header">
+                <h2>Меню</h2>
+                <button class="close-menu" id="close-menu">✕</button>
+            </div>
+            <nav class="menu-nav">
+                <button class="menu-item" data-action="levels">📚 Уровни</button>
+                <button class="menu-item" data-action="achievements">🏆 Достижения</button>
+                <button class="menu-item" data-action="docs">📖 Документация</button>
+                <button class="menu-item" data-action="settings">⚙️ Настройки</button>
+                <button class="menu-item" data-action="about">ℹ️ О проекте</button>
+            </nav>
+        </aside>
+
+        <!-- Modals -->
+        <div class="modal-overlay hidden" id="modal-overlay">
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <h2 id="modal-title">Заголовок</h2>
+                    <button class="modal-close" id="modal-close">✕</button>
+                </div>
+                <div class="modal-content" id="modal-content">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement Notification -->
+        <div class="achievement-notification hidden" id="achievement-notification">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-info">
+                <span class="achievement-label">Достижение получено!</span>
+                <span class="achievement-name" id="achievement-name">Название</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/engine/sprites.js"></script>
+    <script src="js/engine/world.js"></script>
+    <script src="js/engine/player.js"></script>
+    <script src="js/engine/game.js"></script>
+    <script src="js/editor/highlighter.js"></script>
+    <script src="js/editor/executor.js"></script>
+    <script src="js/editor/editor.js"></script>
+    <script src="js/levels/levels.js"></script>
+    <script src="js/levels/achievements.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

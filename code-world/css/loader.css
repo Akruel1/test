@@ -1,0 +1,269 @@
+/* ============================================
+   CodeWorld - Loading Screen Styles
+   ============================================ */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.loading-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at center, transparent 0%, var(--bg-dark) 70%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 245, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.loader-container {
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Pixel Logo */
+.pixel-logo {
+    margin-bottom: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-text {
+    font-family: var(--font-pixel);
+    font-size: 48px;
+    color: var(--text-primary);
+    text-shadow: 
+        4px 4px 0 var(--bg-tertiary),
+        -2px -2px 0 var(--bg-tertiary);
+    letter-spacing: 8px;
+    animation: flicker 3s infinite;
+}
+
+.logo-text.accent {
+    color: var(--neon-cyan);
+    text-shadow: 
+        0 0 10px var(--neon-cyan),
+        0 0 20px var(--neon-cyan),
+        0 0 40px var(--neon-cyan),
+        4px 4px 0 rgba(0, 100, 120, 0.5);
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Loading Bar */
+.loading-bar-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--bg-tertiary);
+    border: 3px solid var(--text-muted);
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 8px,
+        rgba(0, 0, 0, 0.3) 8px,
+        rgba(0, 0, 0, 0.3) 10px
+    );
+    pointer-events: none;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+    box-shadow: 0 0 10px var(--neon-cyan);
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.loading-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+.loading-text {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-md);
+    letter-spacing: 2px;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* Pixel Art Decoration */
+.pixel-art-decoration {
+    margin-top: var(--spacing-xxl);
+    display: flex;
+    justify-content: center;
+}
+
+.pixel-character {
+    width: 64px;
+    height: 64px;
+    background: var(--neon-cyan);
+    position: relative;
+    animation: float 2s ease-in-out infinite;
+    image-rendering: pixelated;
+    
+    /* Simple pixel character using box-shadow */
+    background: transparent;
+    box-shadow:
+        /* Head */
+        8px 0 0 var(--neon-cyan),
+        16px 0 0 var(--neon-cyan),
+        24px 0 0 var(--neon-cyan),
+        0 8px 0 var(--neon-cyan),
+        8px 8px 0 var(--neon-pink),
+        16px 8px 0 var(--neon-pink),
+        24px 8px 0 var(--neon-pink),
+        32px 8px 0 var(--neon-cyan),
+        0 16px 0 var(--neon-cyan),
+        8px 16px 0 var(--text-primary),
+        16px 16px 0 var(--neon-pink),
+        24px 16px 0 var(--text-primary),
+        32px 16px 0 var(--neon-cyan),
+        8px 24px 0 var(--neon-cyan),
+        16px 24px 0 var(--neon-cyan),
+        24px 24px 0 var(--neon-cyan),
+        /* Body */
+        8px 32px 0 var(--neon-purple),
+        16px 32px 0 var(--neon-purple),
+        24px 32px 0 var(--neon-purple),
+        0 40px 0 var(--neon-cyan),
+        8px 40px 0 var(--neon-purple),
+        16px 40px 0 var(--neon-purple),
+        24px 40px 0 var(--neon-purple),
+        32px 40px 0 var(--neon-cyan),
+        8px 48px 0 var(--neon-purple),
+        16px 48px 0 var(--neon-purple),
+        24px 48px 0 var(--neon-purple),
+        /* Legs */
+        8px 56px 0 var(--neon-cyan),
+        16px 56px 0 var(--bg-tertiary),
+        24px 56px 0 var(--neon-cyan);
+    
+    transform: scale(1.5);
+}
+
+/* Particles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neon-cyan);
+    opacity: 0.6;
+    animation: particleFloat 8s linear infinite;
+}
+
+.particle:nth-child(2n) {
+    background: var(--neon-pink);
+    animation-duration: 10s;
+}
+
+.particle:nth-child(3n) {
+    background: var(--neon-purple);
+    animation-duration: 12s;
+}
+
+.particle:nth-child(4n) {
+    width: 2px;
+    height: 2px;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Loading States */
+.loading-screen.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+    
+    .loading-bar-container {
+        width: 250px;
+    }
+    
+    .loading-text {
+        font-size: 8px;
+    }
+    
+    .pixel-character {
+        transform: scale(1);
+    }
+}
