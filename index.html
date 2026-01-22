@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0c16" />
+    <title>Neon Codeworld</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <noscript>
+      This experience requires JavaScript to run the simulation.
+    </noscript>
+
+    <div id="loading-screen" class="screen loading-screen">
+      <div class="loading-content">
+        <div class="pixel-logo">NEON CODEWORLD</div>
+        <div class="loading-bar">
+          <div class="loading-fill" id="loading-fill"></div>
+        </div>
+        <div class="loading-status">
+          <span id="loading-percent">0%</span>
+          <span class="loading-text">Booting the simulation...</span>
+        </div>
+        <div class="loading-pixels" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro-screen" class="screen intro-screen hidden">
+      <div class="intro-card">
+        <div class="intro-header">
+          <span class="intro-tag">SYSTEM BRIEF</span>
+          <span id="intro-step" class="intro-step">01</span>
+        </div>
+        <h1 id="intro-title">Welcome to the Codeworld</h1>
+        <p id="intro-body">
+          You are entering a programmable game realm. Every action, object, and
+          event is driven by code you write.
+        </p>
+        <div class="intro-actions">
+          <button id="intro-skip" class="ghost">Skip</button>
+          <button id="intro-next" class="primary">Next</button>
+        </div>
+        <div class="intro-progress">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <div class="brand-title">Neon Codeworld</div>
+            <div class="brand-sub">Programmable Realm</div>
+          </div>
+        </div>
+        <div class="topbar-status">
+          <span class="status-label">World</span>
+          <span class="status-value">Lumen Sector 01</span>
+        </div>
+        <div class="topbar-controls">
+          <div class="language-selector" role="tablist" aria-label="Languages">
+            <button class="tab active" data-lang="python" role="tab">Python</button>
+            <button class="tab" data-lang="java" role="tab">Java</button>
+            <button class="tab" data-lang="cpp" role="tab">C++</button>
+          </div>
+          <button id="run-btn" class="primary">Run</button>
+          <button id="reset-btn" class="ghost">Reset</button>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel game-panel">
+          <div class="panel-header">
+            <span>Game Field</span>
+            <span id="world-status" class="panel-status">Syncing...</span>
+          </div>
+          <div class="game-container">
+            <canvas id="game-canvas" aria-label="Game world"></canvas>
+            <div class="game-overlay">
+              <div class="hud">
+                <div class="hud-item">
+                  <span class="hud-label">Agent</span>
+                  <span id="hud-agent" class="hud-value">X-01</span>
+                </div>
+                <div class="hud-item">
+                  <span class="hud-label">Coords</span>
+                  <span id="hud-coords" class="hud-value">0,0</span>
+                </div>
+                <div class="hud-item">
+                  <span class="hud-label">Energy</span>
+                  <span id="hud-energy" class="hud-value">0</span>
+                </div>
+              </div>
+              <div id="event-banner" class="event-banner"></div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="mission">
+              <div class="panel-subtitle">Mission Brief</div>
+              <p id="mission-text">
+                Reach the neon node and interact to stabilize the sector.
+              </p>
+            </div>
+            <div class="achievements">
+              <div class="panel-subtitle">Achievements</div>
+              <ul id="achievement-list"></ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="right-stack">
+          <section class="panel code-panel">
+            <div class="panel-header">
+              <span>Code Console</span>
+              <div class="panel-actions">
+                <button id="guide-btn" class="ghost">Guide</button>
+                <button id="save-btn" class="ghost">Save</button>
+              </div>
+            </div>
+            <div class="editor">
+              <textarea
+                id="code-editor"
+                spellcheck="false"
+                aria-label="Code editor"
+              ></textarea>
+              <div class="editor-overlay">
+                <div class="editor-title">Command API</div>
+                <ul>
+                  <li><span>move("up")</span> / <span>move("down")</span></li>
+                  <li><span>move("left")</span> / <span>move("right")</span></li>
+                  <li><span>say("message")</span></li>
+                  <li><span>wait(2)</span></li>
+                  <li><span>interact()</span></li>
+                  <li><span>setColor("#78f7ff")</span></li>
+                  <li><span>repeat(3)</span> block</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel output-panel">
+            <div class="panel-header">
+              <span>Event Log</span>
+              <span id="log-status" class="panel-status">Idle</span>
+            </div>
+            <div id="output-log" class="output-log" aria-live="polite"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
