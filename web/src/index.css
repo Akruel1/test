@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --bg0: #070812;
+  --bg1: #0b0f22;
+  --panel: rgba(12, 18, 38, 0.72);
+  --panel2: rgba(12, 18, 38, 0.5);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+  --line: rgba(124, 255, 246, 0.16);
+  --neon: #6dffea;
+  --neon2: #c46dff;
+  --danger: #ff5e7a;
+  --ok: #4dff9a;
+
+  color-scheme: dark;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 10% 10%, #0b1339 0%, var(--bg0) 40%, #050612 100%);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+.px {
+  font-family: 'Press Start 2P', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.crtNoise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 2px, transparent 4px),
+    radial-gradient(1200px 700px at 70% 10%, rgba(196, 109, 255, 0.08), transparent 50%),
+    radial-gradient(900px 600px at 15% 55%, rgba(109, 255, 234, 0.07), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: linear-gradient(180deg, rgba(109, 255, 234, 0.12), rgba(196, 109, 255, 0.06));
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, filter 120ms ease;
+  user-select: none;
+}
+
+.btn:hover {
+  border-color: rgba(109, 255, 234, 0.35);
+  filter: drop-shadow(0 0 10px rgba(109, 255, 234, 0.18));
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
