@@ -21,7 +21,10 @@ start();
 `;
 
 const GameInterface: React.FC = () => {
-  const [code, setCode] = useState<string>(INITIAL_CODE);
+  const [code, setCode] = useState<string>(() => {
+    return localStorage.getItem('cw_code') || INITIAL_CODE;
+  });
+  
   const [gameState, setGameState] = useState<GameState>({
     player: { position: { x: 1, y: 1 }, direction: 'RIGHT' },
     gridSize: 10,
@@ -31,6 +34,11 @@ const GameInterface: React.FC = () => {
   });
 
   const [commandQueue, setCommandQueue] = useState<string[]>([]);
+
+  // Save code to local storage
+  useEffect(() => {
+    localStorage.setItem('cw_code', code);
+  }, [code]);
 
   const addLog = useCallback((message: string, type: 'info' | 'error' | 'success' = 'info') => {
     const newLog: LogEntry = {
@@ -89,7 +97,8 @@ const GameInterface: React.FC = () => {
          addLog('Execution finished.', 'info');
          // Check win condition
          if (gameState.player.position.x === 8 && gameState.player.position.y === 8) {
-             addLog('LEVEL COMPLETED!', 'success');
+             addLog('LEVEL COMPLETED! Progress Saved.', 'success');
+             // In a real game, this would unlock the next level
          }
       }
       return;
