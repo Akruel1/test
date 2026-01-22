@@ -1,0 +1,438 @@
+/* ===================================
+   CODEWORLD - Loader Styles
+   Загрузочный экран с пиксельной анимацией
+   =================================== */
+
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-darker);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+/* Фоновый эффект сканлайнов */
+.loader-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Эффект сетки */
+.loader-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.loader-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 500px;
+    padding: 40px;
+}
+
+/* Логотип */
+.loader-logo {
+    font-family: var(--font-pixel);
+    font-size: 2rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.loader-logo .logo-code {
+    color: var(--neon-pink);
+    animation: logoPulse 1s ease-in-out infinite;
+}
+
+.loader-logo .logo-text {
+    color: var(--neon-cyan);
+    animation: logoFlicker 3s ease-in-out infinite;
+}
+
+.loader-logo .logo-world {
+    color: var(--neon-green);
+    animation: logoPulse 1s ease-in-out infinite 0.5s;
+}
+
+@keyframes logoPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes logoFlicker {
+    0%, 100% { 
+        text-shadow: 
+            0 0 5px var(--neon-cyan),
+            0 0 10px var(--neon-cyan),
+            0 0 20px var(--neon-cyan);
+    }
+    92% { 
+        text-shadow: 
+            0 0 5px var(--neon-cyan),
+            0 0 10px var(--neon-cyan),
+            0 0 20px var(--neon-cyan);
+    }
+    93% { opacity: 0.8; }
+    94% { opacity: 1; }
+    95% { opacity: 0.9; }
+    96% { opacity: 1; }
+}
+
+/* Полоса загрузки */
+.loader-bar-container {
+    margin-bottom: 30px;
+}
+
+.loader-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--bg-panel);
+    border: 3px solid var(--neon-cyan);
+    position: relative;
+    overflow: hidden;
+    image-rendering: pixelated;
+}
+
+/* Пиксельные края */
+.loader-bar::before,
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-cyan);
+}
+
+.loader-bar::before {
+    top: -3px;
+    left: -3px;
+    box-shadow: 
+        0 20px 0 var(--neon-cyan),
+        calc(100% + 0px) 0 0 var(--neon-cyan),
+        calc(100% + 0px) 20px 0 var(--neon-cyan);
+}
+
+.loader-progress {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--neon-cyan) 0%,
+        var(--neon-green) 50%,
+        var(--neon-cyan) 100%
+    );
+    background-size: 200% 100%;
+    animation: progressGlow 1s ease-in-out infinite;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.loader-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+    animation: progressShine 0.5s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 10px var(--neon-cyan);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-green);
+    }
+}
+
+@keyframes progressShine {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.loader-percentage {
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    margin-top: 15px;
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Статус загрузки */
+.loader-status {
+    font-family: var(--font-pixel);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-status::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+/* Плавающие пиксели */
+.loader-pixels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.pixel {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    image-rendering: pixelated;
+}
+
+.pixel-1 {
+    top: 10%;
+    left: 10%;
+    background: var(--neon-cyan);
+    animation: pixelFloat1 4s ease-in-out infinite;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.pixel-2 {
+    top: 20%;
+    right: 15%;
+    background: var(--neon-pink);
+    animation: pixelFloat2 5s ease-in-out infinite 0.5s;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.pixel-3 {
+    bottom: 30%;
+    left: 20%;
+    background: var(--neon-green);
+    animation: pixelFloat3 6s ease-in-out infinite 1s;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.pixel-4 {
+    bottom: 15%;
+    right: 25%;
+    background: var(--neon-yellow);
+    animation: pixelFloat1 4.5s ease-in-out infinite 1.5s;
+    box-shadow: 0 0 10px var(--neon-yellow);
+}
+
+.pixel-5 {
+    top: 50%;
+    left: 5%;
+    background: var(--neon-purple);
+    animation: pixelFloat2 5.5s ease-in-out infinite 2s;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+@keyframes pixelFloat1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(90deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(40px, 0) rotate(180deg);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(20px, 30px) rotate(270deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes pixelFloat2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    33% {
+        transform: translate(-30px, -20px) scale(1.2);
+        opacity: 0.7;
+    }
+    66% {
+        transform: translate(-60px, 10px) scale(0.8);
+        opacity: 1;
+    }
+}
+
+@keyframes pixelFloat3 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) rotate(360deg);
+        opacity: 0.6;
+    }
+}
+
+/* Загрузочные сообщения */
+.loader-messages {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Эффект появления */
+.loader-screen.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Дополнительные декоративные элементы */
+.loader-decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(0, 255, 255, 0.1);
+    animation: decorRotate 10s linear infinite;
+}
+
+.loader-decoration:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.loader-decoration:nth-child(2) {
+    bottom: 10%;
+    right: 10%;
+    animation-direction: reverse;
+}
+
+@keyframes decorRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Глитч эффект */
+.glitch {
+    animation: glitchEffect 0.3s ease;
+}
+
+@keyframes glitchEffect {
+    0% {
+        transform: translate(0);
+        filter: none;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(90deg);
+    }
+    40% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(180deg);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(270deg);
+    }
+    80% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(360deg);
+    }
+    100% {
+        transform: translate(0);
+        filter: none;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .loader-logo {
+        font-size: 1.5rem;
+    }
+    
+    .loader-percentage {
+        font-size: 1rem;
+    }
+    
+    .loader-status {
+        font-size: 0.6rem;
+    }
+    
+    .pixel {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-logo {
+        font-size: 1rem;
+    }
+    
+    .loader-bar {
+        height: 15px;
+    }
+    
+    .loader-content {
+        padding: 20px;
+    }
+}

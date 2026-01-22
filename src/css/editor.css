@@ -1,0 +1,580 @@
+/* ===================================
+   CODEWORLD - Code Editor Styles
+   Подсветка синтаксиса и темы
+   =================================== */
+
+/* ==================== SYNTAX HIGHLIGHTING ==================== */
+
+/* Ключевые слова */
+.syntax-keyword {
+    color: var(--neon-pink);
+}
+
+/* Встроенные функции */
+.syntax-builtin {
+    color: var(--neon-cyan);
+}
+
+/* Строки */
+.syntax-string {
+    color: var(--neon-green);
+}
+
+/* Числа */
+.syntax-number {
+    color: var(--neon-orange);
+}
+
+/* Комментарии */
+.syntax-comment {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Операторы */
+.syntax-operator {
+    color: var(--neon-yellow);
+}
+
+/* Функции (определения) */
+.syntax-function {
+    color: var(--neon-blue);
+}
+
+/* Классы */
+.syntax-class {
+    color: var(--neon-purple);
+}
+
+/* Переменные */
+.syntax-variable {
+    color: var(--text-primary);
+}
+
+/* Параметры */
+.syntax-parameter {
+    color: var(--neon-orange);
+    font-style: italic;
+}
+
+/* Декораторы (Python) */
+.syntax-decorator {
+    color: var(--neon-yellow);
+}
+
+/* API функции (game) */
+.syntax-api {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* ==================== AUTOCOMPLETE ==================== */
+.autocomplete-dropdown {
+    position: absolute;
+    background: var(--bg-panel);
+    border: 2px solid var(--neon-cyan);
+    min-width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected {
+    background: var(--bg-hover);
+}
+
+.autocomplete-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    border-radius: 3px;
+}
+
+.autocomplete-icon.function {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+}
+
+.autocomplete-icon.variable {
+    background: var(--neon-orange);
+    color: var(--bg-dark);
+}
+
+.autocomplete-icon.keyword {
+    background: var(--neon-pink);
+    color: var(--bg-dark);
+}
+
+.autocomplete-icon.snippet {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+}
+
+.autocomplete-text {
+    flex: 1;
+}
+
+.autocomplete-name {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.autocomplete-type {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+.autocomplete-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+/* ==================== ERROR HIGHLIGHTING ==================== */
+.error-line {
+    background: rgba(255, 51, 102, 0.1);
+    position: relative;
+}
+
+.error-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--neon-red);
+}
+
+.error-underline {
+    text-decoration: wavy underline var(--neon-red);
+    text-underline-offset: 3px;
+}
+
+.error-tooltip {
+    position: absolute;
+    background: var(--bg-panel);
+    border: 2px solid var(--neon-red);
+    padding: 10px 15px;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--neon-red);
+    z-index: 1000;
+    max-width: 400px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.error-tooltip::before {
+    content: '⚠';
+    margin-right: 8px;
+}
+
+/* ==================== CURRENT LINE HIGHLIGHT ==================== */
+.current-line {
+    background: rgba(0, 255, 255, 0.05);
+}
+
+/* ==================== BRACKET MATCHING ==================== */
+.bracket-match {
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 2px;
+}
+
+.bracket-mismatch {
+    background: rgba(255, 51, 102, 0.2);
+    border: 1px solid var(--neon-red);
+    border-radius: 2px;
+}
+
+/* ==================== SELECTION ==================== */
+.editor-selection {
+    background: rgba(0, 255, 255, 0.2);
+}
+
+/* ==================== MINIMAP ==================== */
+.minimap {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: var(--bg-dark);
+    border-left: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.minimap-content {
+    transform: scale(0.1);
+    transform-origin: top right;
+}
+
+.minimap-viewport {
+    position: absolute;
+    right: 0;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* ==================== DIFF VIEW ==================== */
+.diff-added {
+    background: rgba(0, 255, 136, 0.1);
+    border-left: 3px solid var(--neon-green);
+}
+
+.diff-removed {
+    background: rgba(255, 51, 102, 0.1);
+    border-left: 3px solid var(--neon-red);
+}
+
+.diff-modified {
+    background: rgba(255, 255, 0, 0.1);
+    border-left: 3px solid var(--neon-yellow);
+}
+
+/* ==================== SEARCH HIGHLIGHT ==================== */
+.search-match {
+    background: rgba(255, 255, 0, 0.3);
+    border: 1px solid var(--neon-yellow);
+    border-radius: 2px;
+}
+
+.search-match.current {
+    background: rgba(255, 136, 0, 0.4);
+    border-color: var(--neon-orange);
+}
+
+/* ==================== FIND & REPLACE BAR ==================== */
+.find-bar {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: var(--bg-panel);
+    border: 2px solid var(--border-color);
+    padding: 10px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform var(--transition-fast);
+}
+
+.find-bar.active {
+    transform: translateY(0);
+}
+
+.find-input {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    outline: none;
+    width: 200px;
+}
+
+.find-input:focus {
+    border-color: var(--neon-cyan);
+}
+
+.find-results {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    min-width: 80px;
+}
+
+.find-btn {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    font-size: 1rem;
+}
+
+.find-btn:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+}
+
+/* ==================== CODE FOLDING ==================== */
+.fold-gutter {
+    width: 15px;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fold-marker {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.fold-marker:hover {
+    color: var(--neon-cyan);
+}
+
+.fold-marker.collapsed::after {
+    content: '▶';
+}
+
+.fold-marker.expanded::after {
+    content: '▼';
+}
+
+.folded-line {
+    display: inline-block;
+    background: var(--bg-hover);
+    padding: 0 8px;
+    margin: 0 5px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.folded-line:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+}
+
+/* ==================== EDITOR THEMES ==================== */
+
+/* Dark Theme (Default) */
+.theme-dark {
+    --editor-bg: var(--bg-panel);
+    --editor-text: var(--text-primary);
+}
+
+/* Light Theme */
+.theme-light {
+    --editor-bg: #f5f5f5;
+    --editor-text: #333;
+}
+
+.theme-light .code-editor-section {
+    background: #ffffff;
+}
+
+.theme-light #code-editor {
+    color: #333;
+}
+
+.theme-light .line-numbers {
+    background: #f0f0f0;
+    color: #999;
+}
+
+.theme-light .syntax-keyword {
+    color: #d73a49;
+}
+
+.theme-light .syntax-string {
+    color: #22863a;
+}
+
+.theme-light .syntax-number {
+    color: #005cc5;
+}
+
+.theme-light .syntax-comment {
+    color: #6a737d;
+}
+
+/* Neon Theme */
+.theme-neon {
+    --editor-bg: #0a0015;
+}
+
+.theme-neon .code-editor-section {
+    background: #0a0015;
+}
+
+.theme-neon #code-editor {
+    text-shadow: 0 0 5px currentColor;
+}
+
+.theme-neon .syntax-keyword {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.theme-neon .syntax-string {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.theme-neon .syntax-number {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+.theme-neon .syntax-function {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* ==================== LOADING STATE ==================== */
+.editor-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    color: var(--neon-cyan);
+}
+
+.editor-loading::after {
+    content: '';
+    animation: loadingDots 1s steps(4) infinite;
+}
+
+@keyframes loadingDots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
+
+/* ==================== READONLY MODE ==================== */
+.editor-readonly {
+    opacity: 0.7;
+}
+
+.editor-readonly #code-editor {
+    cursor: not-allowed;
+}
+
+.readonly-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--neon-yellow);
+    color: var(--bg-dark);
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
+    padding: 5px 10px;
+}
+
+/* ==================== FULLSCREEN MODE ==================== */
+.editor-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    z-index: 9999;
+}
+
+.editor-fullscreen .editor-header {
+    padding: 0 30px;
+}
+
+.editor-fullscreen #code-editor {
+    font-size: 16px;
+}
+
+/* ==================== SPLIT VIEW ==================== */
+.split-view {
+    display: flex;
+}
+
+.split-view .editor-pane {
+    flex: 1;
+    border-right: 2px solid var(--border-color);
+}
+
+.split-view .editor-pane:last-child {
+    border-right: none;
+}
+
+.split-divider {
+    width: 5px;
+    background: var(--border-color);
+    cursor: col-resize;
+}
+
+.split-divider:hover {
+    background: var(--neon-cyan);
+}
+
+/* ==================== CODE SNIPPETS ==================== */
+.snippet-popup {
+    position: absolute;
+    background: var(--bg-panel);
+    border: 2px solid var(--neon-cyan);
+    padding: 15px;
+    z-index: 1000;
+    min-width: 300px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.snippet-header {
+    font-family: var(--font-pixel);
+    font-size: 0.6rem;
+    color: var(--neon-cyan);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.snippet-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.snippet-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.snippet-item:hover {
+    background: var(--bg-hover);
+}
+
+.snippet-name {
+    font-family: var(--font-code);
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.snippet-preview {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

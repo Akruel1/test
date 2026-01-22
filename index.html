@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWorld - Программируй свою реальность</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/loader.css">
+    <link rel="stylesheet" href="src/css/game.css">
+    <link rel="stylesheet" href="src/css/editor.css">
+    <link rel="stylesheet" href="src/css/presentation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Загрузочный экран -->
+    <div id="loader-screen" class="loader-screen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-code">&lt;</span>
+                <span class="logo-text">CODE</span>
+                <span class="logo-world">WORLD</span>
+                <span class="logo-code">/&gt;</span>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar">
+                    <div class="loader-progress" id="loader-progress"></div>
+                </div>
+                <div class="loader-percentage" id="loader-percentage">0%</div>
+            </div>
+            <div class="loader-status" id="loader-status">Инициализация системы...</div>
+            <div class="loader-pixels">
+                <div class="pixel pixel-1"></div>
+                <div class="pixel pixel-2"></div>
+                <div class="pixel pixel-3"></div>
+                <div class="pixel pixel-4"></div>
+                <div class="pixel pixel-5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Презентация -->
+    <div id="presentation-screen" class="presentation-screen hidden">
+        <div class="presentation-container">
+            <div class="presentation-slides" id="presentation-slides">
+                <!-- Слайды добавляются через JS -->
+            </div>
+            <div class="presentation-controls">
+                <button class="btn-skip" id="btn-skip">Пропустить</button>
+                <div class="presentation-dots" id="presentation-dots"></div>
+                <button class="btn-next" id="btn-next">Далее</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главное меню -->
+    <div id="main-menu" class="main-menu hidden">
+        <div class="menu-background">
+            <canvas id="menu-particles"></canvas>
+        </div>
+        <div class="menu-content">
+            <div class="menu-logo">
+                <span class="logo-code">&lt;</span>
+                <span class="logo-text">CODE</span>
+                <span class="logo-world">WORLD</span>
+                <span class="logo-code">/&gt;</span>
+            </div>
+            <div class="menu-subtitle">Программируй свою реальность</div>
+            <nav class="menu-nav">
+                <button class="menu-btn" id="btn-new-game">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Новая игра</span>
+                </button>
+                <button class="menu-btn" id="btn-continue" disabled>
+                    <span class="btn-icon">↺</span>
+                    <span class="btn-text">Продолжить</span>
+                </button>
+                <button class="menu-btn" id="btn-sandbox">
+                    <span class="btn-icon">⚙</span>
+                    <span class="btn-text">Песочница</span>
+                </button>
+                <button class="menu-btn" id="btn-achievements">
+                    <span class="btn-icon">★</span>
+                    <span class="btn-text">Достижения</span>
+                </button>
+                <button class="menu-btn" id="btn-settings">
+                    <span class="btn-icon">☰</span>
+                    <span class="btn-text">Настройки</span>
+                </button>
+            </nav>
+            <div class="menu-language-selector">
+                <span class="lang-label">Язык программирования:</span>
+                <select id="programming-language">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Игровой экран -->
+    <div id="game-screen" class="game-screen hidden">
+        <!-- Верхняя панель -->
+        <header class="game-header">
+            <div class="header-left">
+                <button class="icon-btn" id="btn-menu-toggle" title="Меню">☰</button>
+                <div class="level-info">
+                    <span class="level-label">Уровень:</span>
+                    <span class="level-name" id="current-level">Начало пути</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="objective" id="current-objective">
+                    <span class="objective-icon">🎯</span>
+                    <span class="objective-text">Переместите персонажа к выходу</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">⚡</span>
+                        <span class="stat-value" id="energy-count">100</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">💎</span>
+                        <span class="stat-value" id="crystals-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">★</span>
+                        <span class="stat-value" id="score-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основная область -->
+        <main class="game-main">
+            <!-- Игровое поле -->
+            <section class="game-canvas-section">
+                <div class="canvas-container">
+                    <canvas id="game-canvas"></canvas>
+                    <div class="game-overlay" id="game-overlay">
+                        <div class="overlay-message" id="overlay-message"></div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="btn-run" title="Запустить код (F5)">
+                        <span class="control-icon">▶</span>
+                        <span class="control-text">Запустить</span>
+                    </button>
+                    <button class="control-btn" id="btn-stop" title="Остановить (Esc)">
+                        <span class="control-icon">■</span>
+                        <span class="control-text">Стоп</span>
+                    </button>
+                    <button class="control-btn" id="btn-reset" title="Сбросить уровень">
+                        <span class="control-icon">↺</span>
+                        <span class="control-text">Сброс</span>
+                    </button>
+                    <div class="speed-control">
+                        <span class="speed-label">Скорость:</span>
+                        <input type="range" id="game-speed" min="0.5" max="3" step="0.5" value="1">
+                        <span class="speed-value" id="speed-value">1x</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Редактор кода -->
+            <section class="code-editor-section">
+                <div class="editor-header">
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-tab="main">main.py</button>
+                        <button class="editor-tab" data-tab="functions">functions.py</button>
+                    </div>
+                    <div class="editor-actions">
+                        <button class="editor-btn" id="btn-docs" title="Документация API">
+                            <span>📖</span>
+                        </button>
+                        <button class="editor-btn" id="btn-hints" title="Подсказки">
+                            <span>💡</span>
+                        </button>
+                        <button class="editor-btn" id="btn-fullscreen-editor" title="Полный экран">
+                            <span>⛶</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <div class="line-numbers" id="line-numbers"></div>
+                    <textarea id="code-editor" spellcheck="false" placeholder="# Напишите ваш код здесь..."></textarea>
+                    <div class="code-highlight" id="code-highlight"></div>
+                </div>
+                <div class="editor-footer">
+                    <div class="editor-info">
+                        <span class="lang-badge" id="current-lang-badge">Python</span>
+                        <span class="cursor-position" id="cursor-position">Строка: 1, Столбец: 1</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Нижняя панель - консоль -->
+        <footer class="game-footer">
+            <div class="console-header">
+                <div class="console-tabs">
+                    <button class="console-tab active" data-console="output">Вывод</button>
+                    <button class="console-tab" data-console="errors">Ошибки</button>
+                    <button class="console-tab" data-console="log">Лог игры</button>
+                </div>
+                <button class="console-clear" id="btn-clear-console" title="Очистить">🗑</button>
+            </div>
+            <div class="console-content">
+                <div class="console-panel active" id="console-output"></div>
+                <div class="console-panel" id="console-errors"></div>
+                <div class="console-panel" id="console-log"></div>
+            </div>
+        </footer>
+
+        <!-- Боковая панель документации -->
+        <aside class="docs-panel hidden" id="docs-panel">
+            <div class="docs-header">
+                <h3>📖 API Документация</h3>
+                <button class="close-btn" id="close-docs">✕</button>
+            </div>
+            <div class="docs-content" id="docs-content">
+                <!-- Документация загружается через JS -->
+            </div>
+        </aside>
+
+        <!-- Панель подсказок -->
+        <aside class="hints-panel hidden" id="hints-panel">
+            <div class="hints-header">
+                <h3>💡 Подсказки</h3>
+                <button class="close-btn" id="close-hints">✕</button>
+            </div>
+            <div class="hints-content" id="hints-content">
+                <!-- Подсказки загружаются через JS -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Модальное окно достижений -->
+    <div id="achievement-modal" class="modal hidden">
+        <div class="modal-content achievement-unlock">
+            <div class="achievement-icon" id="achievement-icon">🏆</div>
+            <div class="achievement-title">Достижение разблокировано!</div>
+            <div class="achievement-name" id="achievement-name"></div>
+            <div class="achievement-desc" id="achievement-desc"></div>
+            <button class="modal-btn" id="achievement-close">Отлично!</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно завершения уровня -->
+    <div id="level-complete-modal" class="modal hidden">
+        <div class="modal-content level-complete">
+            <div class="complete-stars" id="complete-stars">★★★</div>
+            <div class="complete-title">Уровень пройден!</div>
+            <div class="complete-stats">
+                <div class="stat-row">
+                    <span>Строк кода:</span>
+                    <span id="stat-lines">0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Время выполнения:</span>
+                    <span id="stat-time">0.00s</span>
+                </div>
+                <div class="stat-row">
+                    <span>Очки:</span>
+                    <span id="stat-score">0</span>
+                </div>
+            </div>
+            <div class="complete-actions">
+                <button class="modal-btn secondary" id="btn-retry-level">Повторить</button>
+                <button class="modal-btn primary" id="btn-next-level">Следующий уровень</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content settings">
+            <div class="modal-header">
+                <h3>⚙ Настройки</h3>
+                <button class="close-btn" id="close-settings">✕</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-group">
+                    <label>Тема редактора:</label>
+                    <select id="editor-theme">
+                        <option value="dark">Тёмная</option>
+                        <option value="light">Светлая</option>
+                        <option value="neon">Неоновая</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Размер шрифта:</label>
+                    <input type="range" id="font-size" min="12" max="24" value="16">
+                    <span id="font-size-value">16px</span>
+                </div>
+                <div class="setting-group">
+                    <label>Звуковые эффекты:</label>
+                    <input type="checkbox" id="sound-effects" checked>
+                </div>
+                <div class="setting-group">
+                    <label>Музыка:</label>
+                    <input type="checkbox" id="music" checked>
+                </div>
+                <div class="setting-group">
+                    <label>Показывать подсказки:</label>
+                    <input type="checkbox" id="show-hints" checked>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn primary" id="save-settings">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="src/js/core/utils.js"></script>
+    <script src="src/js/core/storage.js"></script>
+    <script src="src/js/core/audio.js"></script>
+    <script src="src/js/engine/renderer.js"></script>
+    <script src="src/js/engine/sprite.js"></script>
+    <script src="src/js/engine/player.js"></script>
+    <script src="src/js/engine/world.js"></script>
+    <script src="src/js/engine/game.js"></script>
+    <script src="src/js/editor/syntax.js"></script>
+    <script src="src/js/editor/editor.js"></script>
+    <script src="src/js/editor/interpreter.js"></script>
+    <script src="src/js/levels/level-data.js"></script>
+    <script src="src/js/levels/achievements.js"></script>
+    <script src="src/js/core/loader.js"></script>
+    <script src="src/js/core/presentation.js"></script>
+    <script src="src/js/core/app.js"></script>
+</body>
+</html>

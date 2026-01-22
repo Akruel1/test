@@ -1,0 +1,586 @@
+/* ===================================
+   CODEWORLD - Main Styles
+   Пиксельная графика + Неоновый стиль
+   =================================== */
+
+/* CSS Variables */
+:root {
+    /* Цветовая палитра */
+    --bg-dark: #0a0a0f;
+    --bg-darker: #05050a;
+    --bg-panel: #12121a;
+    --bg-card: #1a1a25;
+    --bg-hover: #252535;
+    
+    /* Неоновые цвета */
+    --neon-cyan: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff88;
+    --neon-yellow: #ffff00;
+    --neon-orange: #ff8800;
+    --neon-red: #ff3366;
+    --neon-blue: #4488ff;
+    --neon-purple: #aa55ff;
+    
+    /* Текст */
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #606070;
+    
+    /* Границы */
+    --border-color: #2a2a3a;
+    --border-glow: rgba(0, 255, 255, 0.3);
+    
+    /* Шрифты */
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-code: 'JetBrains Mono', monospace;
+    
+    /* Размеры */
+    --header-height: 60px;
+    --footer-height: 150px;
+    --sidebar-width: 350px;
+    
+    /* Анимации */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-code);
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Скрытие элементов */
+.hidden {
+    display: none !important;
+}
+
+/* Неоновое свечение */
+.neon-glow {
+    text-shadow: 
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 40px currentColor;
+}
+
+.neon-box {
+    box-shadow: 
+        0 0 5px var(--neon-cyan),
+        0 0 10px var(--neon-cyan),
+        inset 0 0 5px rgba(0, 255, 255, 0.1);
+}
+
+/* Пиксельный стиль */
+.pixel-border {
+    border: 4px solid var(--neon-cyan);
+    box-shadow: 
+        4px 4px 0 var(--neon-pink),
+        -4px -4px 0 var(--neon-green);
+    image-rendering: pixelated;
+}
+
+/* Кнопки */
+button {
+    font-family: var(--font-pixel);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+}
+
+/* Выделение текста */
+::selection {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+}
+
+/* Главное меню */
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%),
+        var(--bg-darker);
+}
+
+#menu-particles {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 40px;
+}
+
+.menu-logo {
+    font-family: var(--font-pixel);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-code {
+    color: var(--neon-pink);
+}
+
+.logo-text {
+    color: var(--neon-cyan);
+}
+
+.logo-world {
+    color: var(--neon-green);
+}
+
+@keyframes logoGlow {
+    from {
+        text-shadow: 
+            0 0 10px rgba(0, 255, 255, 0.5),
+            0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 40px rgba(0, 255, 255, 0.5),
+            0 0 60px rgba(0, 255, 255, 0.3);
+    }
+}
+
+.menu-subtitle {
+    font-family: var(--font-pixel);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px 40px;
+    background: var(--bg-panel);
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: var(--transition-normal);
+}
+
+.menu-btn:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.menu-btn:hover:not(:disabled) {
+    border-color: var(--neon-cyan);
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        inset 0 0 10px rgba(0, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.menu-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.menu-language-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.lang-label {
+    font-family: var(--font-pixel);
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+}
+
+#programming-language {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    background: var(--bg-dark);
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    cursor: pointer;
+    outline: none;
+}
+
+#programming-language:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+#programming-language option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--bg-panel);
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-family: var(--font-pixel);
+    font-size: 0.9rem;
+    color: var(--neon-cyan);
+}
+
+.close-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+}
+
+.close-btn:hover {
+    color: var(--neon-red);
+}
+
+.modal-btn {
+    font-family: var(--font-pixel);
+    font-size: 0.7rem;
+    padding: 15px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.modal-btn.primary {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+}
+
+.modal-btn.primary:hover {
+    background: var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.modal-btn.secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-btn.secondary:hover {
+    border-color: var(--neon-cyan);
+}
+
+/* Достижения модал */
+.achievement-unlock {
+    text-align: center;
+    border-color: var(--neon-yellow);
+    animation: achievementGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes achievementGlow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(255, 255, 0, 0.6);
+    }
+}
+
+.achievement-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.achievement-title {
+    font-family: var(--font-pixel);
+    font-size: 0.7rem;
+    color: var(--neon-yellow);
+    margin-bottom: 10px;
+}
+
+.achievement-name {
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.achievement-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Завершение уровня */
+.level-complete {
+    text-align: center;
+}
+
+.complete-stars {
+    font-size: 3rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.complete-title {
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    color: var(--neon-green);
+    margin-bottom: 25px;
+}
+
+.complete-stats {
+    background: var(--bg-dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row span:first-child {
+    color: var(--text-secondary);
+}
+
+.stat-row span:last-child {
+    color: var(--neon-cyan);
+    font-weight: bold;
+}
+
+.complete-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Настройки */
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setting-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+}
+
+.setting-group label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.setting-group select,
+.setting-group input[type="range"] {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 15px;
+    font-family: var(--font-code);
+}
+
+.setting-group input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: var(--neon-cyan);
+    cursor: pointer;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Анимации пикселей */
+@keyframes pixelFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-logo {
+        font-size: 1.5rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 0.6rem;
+    }
+    
+    .menu-btn {
+        padding: 15px 30px;
+        font-size: 0.6rem;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-logo {
+        font-size: 1rem;
+    }
+    
+    .menu-language-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
