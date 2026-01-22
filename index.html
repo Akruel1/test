@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeForge World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise-layer"></div>
+    <div class="scanlines"></div>
+
+    <div id="boot-screen" class="screen screen--active">
+      <div class="boot-card">
+        <p class="boot-title">CODEFORGE WORLD</p>
+        <div class="boot-art">
+          <span class="pixel-glow"></span>
+          <span class="pixel-glow"></span>
+          <span class="pixel-glow"></span>
+        </div>
+        <div class="boot-progress">
+          <div class="boot-progress__bar" id="boot-bar"></div>
+        </div>
+        <p class="boot-subtitle">инициализация виртуальной реальности...</p>
+      </div>
+    </div>
+
+    <div id="intro-screen" class="screen">
+      <div class="intro-card">
+        <p class="intro-label">Загрузка завершена</p>
+        <h1 id="intro-title">Добро пожаловать в CodeForge World</h1>
+        <p id="intro-text">
+          Здесь мир подчиняется коду. Ты не игрок, ты архитектор виртуальной
+          реальности.
+        </p>
+        <div class="intro-controls">
+          <button id="intro-prev" class="btn btn--ghost">Назад</button>
+          <button id="intro-next" class="btn btn--primary">Далее</button>
+          <button id="intro-skip" class="btn btn--ghost">Пропустить</button>
+        </div>
+      </div>
+    </div>
+
+    <main id="app" class="app">
+      <header class="topbar">
+        <div>
+          <p class="brand">CODEFORGE WORLD</p>
+          <p class="brand-sub">игровая программируемая вселенная</p>
+        </div>
+        <div class="topbar-controls">
+          <div class="language-select">
+            <label for="language">Язык</label>
+            <select id="language">
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="cpp">C++</option>
+            </select>
+          </div>
+          <button id="run-code" class="btn btn--primary">Запустить</button>
+          <button id="reset-world" class="btn btn--ghost">Сброс</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="panel game-panel">
+          <div class="panel-header">
+            <span>Игровое поле</span>
+            <span id="world-status" class="status-tag">Стабильно</span>
+          </div>
+          <div class="game-frame">
+            <canvas id="game-canvas" width="320" height="192"></canvas>
+            <div class="game-hud">
+              <div class="hud-block">
+                <p class="hud-label">Цель</p>
+                <p id="objective-text">Добраться до неонового маяка</p>
+              </div>
+              <div class="hud-block">
+                <p class="hud-label">Задания</p>
+                <ul id="task-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel code-panel">
+          <div class="panel-header">
+            <span>Редактор кода</span>
+            <span class="status-tag status-tag--accent">управление только кодом</span>
+          </div>
+          <div class="editor-wrapper">
+            <textarea id="code-editor" spellcheck="false"></textarea>
+            <div class="editor-actions">
+              <button id="run-code-secondary" class="btn btn--primary">Запустить</button>
+              <button id="insert-template" class="btn btn--ghost">Шаблон</button>
+            </div>
+          </div>
+          <div class="log-panel">
+            <div class="panel-header panel-header--compact">
+              <span>События мира</span>
+              <span id="achievement-count" class="status-tag">0 достижений</span>
+            </div>
+            <div id="log-output" class="log-output"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
