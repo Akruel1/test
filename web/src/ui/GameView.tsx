@@ -91,9 +91,8 @@ export function GameView(props: { world: World }) {
         height={h}
         style={{
           width: `${w * scale}px`,
-          height: `${h * scale}px`,
           maxWidth: '100%',
-          height: 'auto',
+          aspectRatio: `${w} / ${h}`,
           imageRendering: 'pixelated',
           display: 'block',
         }}

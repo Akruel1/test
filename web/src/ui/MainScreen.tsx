@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import type { Dispatch } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import type { LanguageId } from '../runtime/runtime'
 import type { Progress } from '../storage/progress'
 import { saveProgress } from '../storage/progress'
@@ -14,27 +14,33 @@ export function MainScreen(props: {
   setLanguage: (l: LanguageId) => void
   isRunning: boolean
   progress: Progress
-  setProgress: (p: Progress) => void
+  setProgress: Dispatch<SetStateAction<Progress>>
   world: World
   dispatchWorld: Dispatch<WorldReducerAction>
   onRun: (code: string) => Promise<void>
 }) {
-  const [code, setCode] = useState(() => props.progress.codeByLanguage[props.language] ?? defaultTemplate(props.language))
+  const { setProgress } = props
 
-  useEffect(() => {
-    setCode(props.progress.codeByLanguage[props.language] ?? defaultTemplate(props.language))
-  }, [props.language, props.progress.codeByLanguage])
+  const initial = useMemo(() => {
+    const get = (l: LanguageId) => props.progress.codeByLanguage[l] ?? defaultTemplate(l)
+    return { python: get('python'), java: get('java'), cpp: get('cpp') } satisfies Record<LanguageId, string>
+  }, [props.progress.codeByLanguage])
+
+  const [codeByLang, setCodeByLang] = useState<Record<LanguageId, string>>(initial)
+
+  const code = codeByLang[props.language]
+  const setCode = (s: string) => setCodeByLang((prev) => ({ ...prev, [props.language]: s }))
 
   useEffect(() => {
     const t = window.setTimeout(() => {
-      props.setProgress((prev) => {
-        const next: Progress = { ...prev, codeByLanguage: { ...prev.codeByLanguage, [props.language]: code } }
+      setProgress((prev) => {
+        const next: Progress = { ...prev, codeByLanguage: { ...prev.codeByLanguage, ...codeByLang } }
         saveProgress(next)
         return next
       })
     }, 250)
     return () => window.clearTimeout(t)
-  }, [code, props.language, props.setProgress])
+  }, [codeByLang, setProgress])
 
   const run = async () => {
     await props.onRun(code)

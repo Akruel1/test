@@ -1,6 +1,5 @@
 /// <reference lib="webworker" />
 
-import { loadPyodide, type PyodideInterface } from 'pyodide'
 import type { LogLevel, WorldAction } from '../../world/world'
 
 type MainToWorker = { type: 'run'; code: string }
@@ -11,7 +10,15 @@ type WorkerToMain =
   | { type: 'result'; ok: true; stdout?: string; stderr?: string }
   | { type: 'result'; ok: false; error: { name: string; message: string; traceback?: string } }
 
-let pyodide: PyodideInterface | null = null
+type PyodideLike = {
+  runPythonAsync: (code: string) => Promise<unknown>
+  globals: {
+    set: (k: string, v: unknown) => void
+    get: (k: string) => unknown
+  }
+}
+
+let pyodide: PyodideLike | null = null
 let readySent = false
 
 function post(msg: WorkerToMain) {
@@ -26,12 +33,14 @@ function postAction(action: WorldAction) {
   post({ type: 'action', action } satisfies WorkerToMain)
 }
 
-async function ensurePyodide(): Promise<PyodideInterface> {
+async function ensurePyodide(): Promise<PyodideLike> {
   if (pyodide) return pyodide
   postLog('system', 'Загрузка Pyodide (Python в браузере)...')
-  pyodide = await loadPyodide({
-    indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.29.2/full/',
-  })
+  const url = 'https://cdn.jsdelivr.net/pyodide/v0.29.2/full/pyodide.mjs'
+  const mod = (await import(/* @vite-ignore */ url)) as unknown as {
+    loadPyodide: (opts: { indexURL: string }) => Promise<PyodideLike>
+  }
+  pyodide = await mod.loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.29.2/full/' })
 
   ;(self as DedicatedWorkerGlobalScope & { send_action?: (s: string) => void; send_log?: (s: string) => void }).send_action =
     (s: string) => {

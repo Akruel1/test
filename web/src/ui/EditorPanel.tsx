@@ -1,5 +1,5 @@
 import Editor from '@monaco-editor/react'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import type { LanguageId } from '../runtime/runtime'
 import { monacoLanguage } from './codeTemplates'
 
@@ -9,9 +9,6 @@ export function EditorPanel(props: {
   setCode: (s: string) => void
   isRunning: boolean
 }) {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-
   const options = useMemo(
     () => ({
       minimap: { enabled: false },
@@ -63,16 +60,13 @@ export function EditorPanel(props: {
       </div>
 
       <div style={{ flex: 1, minHeight: 0 }}>
-        {/* Monaco иногда плохо ведёт себя при SSR/строгих гидрациях; в Vite всё ок, но монтируем явно */}
-        {mounted && (
-          <Editor
-            language={monacoLanguage(props.language)}
-            value={props.code}
-            onChange={(v) => props.setCode(v ?? '')}
-            theme="vs-dark"
-            options={options}
-          />
-        )}
+        <Editor
+          language={monacoLanguage(props.language)}
+          value={props.code}
+          onChange={(v) => props.setCode(v ?? '')}
+          theme="vs-dark"
+          options={options}
+        />
       </div>
     </div>
   )
