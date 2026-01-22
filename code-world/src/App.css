@@ -1,0 +1,40 @@
+/* App-specific styles - most styles are in index.css with Tailwind */
+
+/* Monaco Editor custom theme overrides */
+.monaco-editor {
+  --vscode-editor-background: #12121a !important;
+}
+
+.monaco-editor .margin {
+  background-color: #12121a !important;
+}
+
+.monaco-editor-background {
+  background-color: #12121a !important;
+}
+
+/* Ensure game canvas maintains pixel-perfect rendering */
+.game-canvas-container canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 2px;
+}
+
+/* Disable text selection during gameplay */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
