@@ -184,7 +184,7 @@ const GameCanvas = () => {
         ctx.shadowBlur = 0;
         break;
         
-      case 'door':
+      case 'door': {
         const isLocked = obj.data?.locked;
         ctx.fillStyle = isLocked ? '#8b4513' : '#228b22';
         ctx.fillRect(x, y, width, height);
@@ -201,8 +201,9 @@ const GameCanvas = () => {
           ctx.fillRect(x + width / 2 - 3, y + height / 2 - 4, 6, 8);
         }
         break;
+      }
         
-      case 'portal':
+      case 'portal': {
         // Animated portal
         ctx.shadowColor = '#b14aed';
         ctx.shadowBlur = 15;
@@ -235,6 +236,7 @@ const GameCanvas = () => {
         ctx.fill();
         ctx.shadowBlur = 0;
         break;
+      }
         
       case 'terminal':
         // Computer terminal
@@ -311,7 +313,7 @@ const GameCanvas = () => {
     animationRef.current = requestAnimationFrame(render);
   }, [currentLevel, objects, player, pixelChar, drawObject, drawCharacter]);
 
-  // Initialize player position
+  // Initialize player position when player changes
   useEffect(() => {
     if (player) {
       setPixelChar(prev => ({
@@ -321,6 +323,7 @@ const GameCanvas = () => {
         facing: player.facing,
       }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [player?.position.x, player?.position.y, player?.facing]);
 
   // Process command queue
@@ -480,6 +483,7 @@ const GameCanvas = () => {
     };
 
     processCommand();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExecutingCode, executionQueue.length]);
 
   // Start render loop

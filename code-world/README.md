@@ -1,73 +1,185 @@
-# React + TypeScript + Vite
+# 🎮 CODE WORLD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Программируй. Играй. Учись.
 
-Currently, two official plugins are available:
+**CODE WORLD** — это интерактивная игровая платформа, где программирование является единственным способом взаимодействия с виртуальным миром. Управляйте персонажем, решайте головоломки и изучайте программирование через увлекательный игровой процесс.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Code World Preview](https://via.placeholder.com/800x400/0a0a0f/00f3ff?text=CODE+WORLD)
 
-## React Compiler
+## ✨ Особенности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎨 **Современная пиксельная графика** с неоновыми эффектами и футуристическим дизайном
+- 💻 **Многоязыковая поддержка** — JavaScript, Python, TypeScript
+- 🎯 **Обучение через игру** — концепции программирования интегрированы в геймплей
+- 🏆 **Система достижений** — разблокируйте награды за успехи
+- 📊 **Отслеживание прогресса** — сохранение и синхронизация результатов
+- 🔒 **Безопасное выполнение кода** — изолированная среда песочницы
 
-## Expanding the ESLint configuration
+## 🚀 Быстрый старт
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Требования
+- Node.js 18+
+- npm или yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Установка
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Клонирование репозитория
+git clone https://github.com/your-repo/code-world.git
+cd code-world
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎮 Как играть
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Основные команды
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```javascript
+// Движение персонажа
+player.move("up");      // Вверх
+player.move("down");    // Вниз
+player.move("left");    // Влево
+player.move("right");   // Вправо
+
+// Движение на несколько клеток
+player.move("right", 5); // 5 клеток вправо
+
+// Взаимодействие
+player.interact();      // Взаимодействие с объектом
+player.say("Привет!");  // Сказать фразу
+
+// Инспекция
+player.inspect();       // Осмотреть окружение
 ```
+
+### Примеры для Python
+
+```python
+# Движение
+player.move("right", 3)
+
+# Использование циклов
+for i in range(5):
+    player.move("up")
+
+# Условия
+if player.inspect():
+    player.interact()
+```
+
+## 🏗️ Архитектура проекта
+
+```
+code-world/
+├── src/
+│   ├── components/      # React компоненты
+│   │   ├── GameCanvas.tsx      # Игровое поле (Canvas)
+│   │   ├── CodeEditor.tsx      # Редактор кода (Monaco)
+│   │   ├── Console.tsx         # Консоль вывода
+│   │   ├── LoadingScreen.tsx   # Экран загрузки
+│   │   ├── IntroPresentation.tsx # Вступительная презентация
+│   │   ├── MainMenu.tsx        # Главное меню
+│   │   ├── LevelSelect.tsx     # Выбор уровня
+│   │   ├── Achievements.tsx    # Достижения
+│   │   └── GameLayout.tsx      # Основной игровой интерфейс
+│   ├── game/            # Игровой движок
+│   ├── store/           # Zustand состояние
+│   │   └── gameStore.ts        # Глобальное состояние игры
+│   ├── utils/           # Утилиты
+│   │   └── codeExecutor.ts     # Исполнитель кода
+│   ├── types/           # TypeScript типы
+│   │   └── index.ts            # Определения типов
+│   └── levels/          # Игровые уровни
+│       └── index.ts            # Конфигурация уровней
+├── public/              # Статические ресурсы
+└── index.html           # Точка входа
+```
+
+## 🎯 Уровни
+
+### Уровень 1: Пробуждение
+Научитесь базовому управлению персонажем через код.
+- Освойте команды движения
+- Соберите монеты
+- Достигните портала
+
+### Уровень 2: Циклы Судьбы
+Используйте циклы для эффективного решения задач.
+- Изучите цикл `for`
+- Соберите ряд монет одной командой
+- Найдите ключ и откройте дверь
+
+### Уровень 3: Функциональный Хаос
+Создавайте собственные функции для навигации.
+- Определите повторяющиеся паттерны
+- Создайте переиспользуемые функции
+- Пройдите сложный лабиринт
+
+## 🛠️ Технологии
+
+- **Frontend**: React 19, TypeScript
+- **Сборка**: Vite
+- **Стили**: Tailwind CSS 4
+- **Редактор кода**: Monaco Editor
+- **Состояние**: Zustand
+- **Анимации**: Framer Motion
+- **Рендеринг**: HTML5 Canvas
+
+## 🎨 Визуальный стиль
+
+- Неоновая цветовая палитра (cyan, purple, green)
+- Пиксельная графика с современными эффектами
+- CRT/Scanline эффекты
+- Плавные анимации и переходы
+- Адаптивный дизайн для всех устройств
+
+## 📦 Скрипты
+
+```bash
+npm run dev      # Запуск dev-сервера
+npm run build    # Сборка для продакшена
+npm run lint     # Проверка ESLint
+npm run preview  # Предпросмотр сборки
+```
+
+## 🔮 Планы развития
+
+- [ ] Добавление новых уровней
+- [ ] Мультиплеер режим
+- [ ] Редактор уровней
+- [ ] Дополнительные языки программирования
+- [ ] Социальные функции (таблицы лидеров)
+- [ ] Мобильная версия
+
+## 🤝 Вклад в проект
+
+Мы приветствуем вклад в проект! Пожалуйста:
+
+1. Форкните репозиторий
+2. Создайте ветку для функции (`git checkout -b feature/AmazingFeature`)
+3. Закоммитьте изменения (`git commit -m 'Add AmazingFeature'`)
+4. Запушьте в ветку (`git push origin feature/AmazingFeature`)
+5. Откройте Pull Request
+
+## 📄 Лицензия
+
+Распространяется под лицензией MIT. Смотрите `LICENSE` для подробностей.
+
+## 📧 Контакты
+
+- Сайт: [codeworld.game](https://codeworld.game)
+- Email: hello@codeworld.game
+
+---
+
+<p align="center">
+  Сделано с ❤️ для тех, кто хочет учиться программированию через игру
+</p>

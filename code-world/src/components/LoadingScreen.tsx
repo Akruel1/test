@@ -1,28 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 interface LoadingScreenProps {
   onComplete: () => void;
 }
 
+const LOADING_STAGES = [
+  'Инициализация системы',
+  'Загрузка игрового мира',
+  'Подготовка компилятора',
+  'Синхронизация реальности',
+  'Активация ИИ-систем',
+  'Запуск виртуальной среды',
+];
+
 const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Инициализация системы');
   const showParticles = true;
 
-  const loadingStages = [
-    'Инициализация системы',
-    'Загрузка игрового мира',
-    'Подготовка компилятора',
-    'Синхронизация реальности',
-    'Активация ИИ-систем',
-    'Запуск виртуальной среды',
-  ];
+  // Derive loading text from progress
+  const loadingText = useMemo(() => {
+    const stageIndex = Math.min(
+      Math.floor((progress / 100) * LOADING_STAGES.length),
+      LOADING_STAGES.length - 1
+    );
+    return LOADING_STAGES[stageIndex];
+  }, [progress]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
-        const next = prev + Math.random() * 15 + 5;
+        const next = prev + (((prev * 7) % 15) + 5); // Deterministic increment
         if (next >= 100) {
           clearInterval(interval);
           setTimeout(onComplete, 500);
@@ -35,22 +43,16 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     return () => clearInterval(interval);
   }, [onComplete]);
 
-  useEffect(() => {
-    const stageIndex = Math.min(
-      Math.floor((progress / 100) * loadingStages.length),
-      loadingStages.length - 1
-    );
-    setLoadingText(loadingStages[stageIndex]);
-  }, [progress]);
-
-  // Generate particles
-  const particles = Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    delay: Math.random() * 5,
-    duration: 5 + Math.random() * 5,
-    size: 2 + Math.random() * 4,
-  }));
+  // Generate particles with stable random values
+  const particles = useMemo(() => 
+    Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      x: (i * 17 + 13) % 100, // Pseudo-random distribution
+      delay: (i * 0.1) % 5,
+      duration: 5 + (i % 5),
+      size: 2 + (i % 4),
+    })),
+  []);
 
   return (
     <div className="fixed inset-0 bg-dark-bg flex items-center justify-center overflow-hidden">

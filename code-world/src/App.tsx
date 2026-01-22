@@ -11,12 +11,10 @@ import GameLayout from './components/GameLayout';
 function App() {
   const { screen, setScreen, userProgress } = useGameStore();
 
-  // Check if first visit
+  // Check if first visit (runs once on mount)
   useEffect(() => {
     const hasVisited = localStorage.getItem('code-world-visited');
-    if (!hasVisited && screen === 'loading') {
-      // Will go to intro after loading
-    } else if (screen === 'loading') {
+    if (hasVisited) {
       // Skip intro if returning user
       localStorage.setItem('code-world-skip-intro', 'true');
     }

@@ -1,9 +1,21 @@
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
 import { levels } from '../levels';
 
 const MainMenu = () => {
   const { setScreen, initializeLevel, userProgress } = useGameStore();
+
+  // Generate particles with stable positions
+  const particles = useMemo(() => 
+    Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      left: (i * 17 + 23) % 100,
+      top: (i * 13 + 7) % 100,
+      duration: 2 + (i % 3),
+      delay: (i * 0.07) % 2,
+    })),
+  []);
 
   const handleStartGame = () => {
     // Load first level or continue from last
@@ -27,22 +39,22 @@ const MainMenu = () => {
       
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => (
+        {particles.map((p) => (
           <motion.div
-            key={i}
+            key={p.id}
             className="absolute w-1 h-1 bg-neon-blue rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${p.left}%`,
+              top: `${p.top}%`,
             }}
             animate={{
               opacity: [0.2, 1, 0.2],
               scale: [1, 1.5, 1],
             }}
             transition={{
-              duration: 2 + Math.random() * 2,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: p.delay,
             }}
           />
         ))}

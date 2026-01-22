@@ -78,7 +78,7 @@ const CodeEditor = () => {
     setTimeout(() => {
       setExecutingCode(false);
     }, 100);
-  }, [code, selectedLanguage, player, objects, isExecutingCode]);
+  }, [code, selectedLanguage, player, objects, isExecutingCode, clearConsole, clearQueue, setExecutingCode, addConsoleMessage, addToQueue, updateProgress, userProgress]);
 
   const handleEditorMount = (editor: unknown) => {
     // Focus editor on mount
