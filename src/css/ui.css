@@ -1,0 +1,425 @@
+/* =============================================
+   CodeWorld - Console & UI Components Styles
+   ============================================= */
+
+/* Console Area */
+.console-area {
+    background: var(--bg-secondary);
+    border-top: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    min-height: 120px;
+}
+
+.console-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.console-title {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--neon-orange);
+}
+
+.console-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.console-tab {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-bottom: 2px solid transparent;
+}
+
+.console-tab:hover {
+    color: var(--text-primary);
+}
+
+.console-tab.active {
+    color: var(--neon-cyan);
+    border-bottom-color: var(--neon-cyan);
+}
+
+.console-tab[data-console="errors"].has-errors {
+    color: var(--neon-red);
+    animation: errorPulse 1s infinite;
+}
+
+@keyframes errorPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.clear-console-btn {
+    font-size: 10px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.clear-console-btn:hover {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+}
+
+/* Console Content */
+.console-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.console-panel {
+    display: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    overflow-y: auto;
+    height: 100%;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.console-panel.active {
+    display: block;
+}
+
+/* Console Lines */
+.console-line {
+    display: block;
+    padding: 2px 0;
+    border-left: 2px solid transparent;
+    padding-left: var(--spacing-sm);
+    margin-left: -var(--spacing-sm);
+}
+
+.console-line.system {
+    color: var(--neon-purple);
+    border-left-color: var(--neon-purple);
+}
+
+.console-line.info {
+    color: var(--neon-cyan);
+    border-left-color: var(--neon-cyan);
+}
+
+.console-line.success {
+    color: var(--neon-green);
+    border-left-color: var(--neon-green);
+}
+
+.console-line.warning {
+    color: var(--warning-color);
+    border-left-color: var(--warning-color);
+}
+
+.console-line.error {
+    color: var(--neon-red);
+    border-left-color: var(--neon-red);
+    background: rgba(255, 51, 102, 0.1);
+}
+
+.console-line.user {
+    color: var(--text-primary);
+}
+
+.console-line.game-event {
+    color: var(--neon-pink);
+    border-left-color: var(--neon-pink);
+}
+
+.console-line .timestamp {
+    color: var(--text-muted);
+    font-size: 10px;
+    margin-right: var(--spacing-sm);
+}
+
+/* Error Panel */
+.error-item {
+    padding: var(--spacing-sm);
+    background: rgba(255, 51, 102, 0.1);
+    border: 1px solid var(--neon-red);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.error-item .error-title {
+    color: var(--neon-red);
+    font-weight: bold;
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.error-item .error-title::before {
+    content: '✖';
+}
+
+.error-item .error-message {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.error-item .error-location {
+    color: var(--text-muted);
+    font-size: 10px;
+    margin-top: var(--spacing-xs);
+}
+
+/* Hints Panel */
+.hint-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hint-item .hint-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.hint-item .hint-text {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.hint-item .hint-text code {
+    background: var(--bg-primary);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    color: var(--neon-green);
+}
+
+/* Game Message Overlay */
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-secondary);
+    border: 3px solid var(--neon-cyan);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--glow-cyan);
+    animation: messagePopup 0.3s ease;
+    z-index: 100;
+}
+
+@keyframes messagePopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.game-message.error {
+    border-color: var(--neon-red);
+    box-shadow: 0 0 30px rgba(255, 51, 102, 0.5);
+}
+
+.game-message.success {
+    border-color: var(--neon-green);
+    box-shadow: var(--glow-green);
+}
+
+.game-message .message-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+}
+
+.game-message .message-title {
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.game-message .message-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: var(--bg-secondary);
+    border: 1px solid var(--neon-cyan);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 11px;
+    color: var(--text-primary);
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--neon-cyan);
+}
+
+/* Progress Bar (Generic) */
+.progress-bar {
+    height: 8px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+    transition: width var(--transition-normal);
+}
+
+/* Badge Component */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px 8px;
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge.new {
+    background: var(--neon-pink);
+    color: white;
+}
+
+.badge.completed {
+    background: var(--neon-green);
+    color: var(--bg-primary);
+}
+
+.badge.locked {
+    background: var(--text-muted);
+    color: var(--bg-primary);
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.star-rating .star {
+    font-size: 20px;
+    color: var(--text-muted);
+}
+
+.star-rating .star.filled {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px var(--neon-yellow);
+}
+
+/* Action Feedback */
+.action-feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-pixel);
+    font-size: 24px;
+    color: var(--neon-cyan);
+    text-shadow: var(--glow-cyan);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10000;
+}
+
+.action-feedback.show {
+    animation: actionFeedback 1s ease forwards;
+}
+
+@keyframes actionFeedback {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(1);
+    }
+}
+
+/* Keyboard Shortcut Display */
+.kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    box-shadow: 0 2px 0 var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .console-area {
+        max-height: 150px;
+        min-height: 100px;
+    }
+    
+    .console-header {
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .console-tabs {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .console-panel {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWorld - Программируй Реальность</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/loading.css">
+    <link rel="stylesheet" href="src/css/intro.css">
+    <link rel="stylesheet" href="src/css/game.css">
+    <link rel="stylesheet" href="src/css/editor.css">
+    <link rel="stylesheet" href="src/css/ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="screen active">
+        <div class="loading-container">
+            <div class="pixel-logo">
+                <span class="logo-text">CODE</span>
+                <span class="logo-text glow">WORLD</span>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <div class="loading-text">ЗАГРУЗКА СИСТЕМЫ...</div>
+            </div>
+            <div class="loading-particles"></div>
+            <div class="pixel-decoration top-left"></div>
+            <div class="pixel-decoration top-right"></div>
+            <div class="pixel-decoration bottom-left"></div>
+            <div class="pixel-decoration bottom-right"></div>
+        </div>
+    </div>
+
+    <!-- Intro Presentation -->
+    <div id="intro-screen" class="screen">
+        <div class="intro-container">
+            <div class="intro-slides">
+                <!-- Slide 1 -->
+                <div class="intro-slide active" data-slide="0">
+                    <div class="slide-content">
+                        <div class="pixel-character intro-character"></div>
+                        <h1 class="slide-title">Добро пожаловать в <span class="highlight">CodeWorld</span></h1>
+                        <p class="slide-text">Мир, где твой код становится реальностью</p>
+                        <div class="code-preview">
+                            <pre><code>hero.move("forward");</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="intro-slide" data-slide="1">
+                    <div class="slide-content">
+                        <div class="concept-icons">
+                            <div class="concept-icon game-icon"></div>
+                            <div class="concept-icon code-icon"></div>
+                            <div class="concept-icon learn-icon"></div>
+                        </div>
+                        <h2 class="slide-title">Что такое <span class="highlight">CodeWorld</span>?</h2>
+                        <ul class="feature-list">
+                            <li><span class="bullet">▸</span> Игровой программируемый мир</li>
+                            <li><span class="bullet">▸</span> Интерактивная обучающая среда</li>
+                            <li><span class="bullet">▸</span> Песочница для креативного кодинга</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="intro-slide" data-slide="2">
+                    <div class="slide-content">
+                        <div class="no-keyboard-icon"></div>
+                        <h2 class="slide-title">Забудь про <span class="highlight-red">клавиатуру</span></h2>
+                        <p class="slide-text">Здесь нет кнопок управления.<br>Единственный способ взаимодействия — <span class="highlight">программирование</span></p>
+                        <div class="code-preview">
+                            <pre><code>// Двигай персонажа кодом
+hero.walkTo(5, 3);
+hero.interact("door");</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="intro-slide" data-slide="3">
+                    <div class="slide-content">
+                        <div class="languages-grid">
+                            <div class="lang-badge python">Python</div>
+                            <div class="lang-badge javascript">JavaScript</div>
+                            <div class="lang-badge java">Java</div>
+                        </div>
+                        <h2 class="slide-title">Выбери свой <span class="highlight">язык</span></h2>
+                        <p class="slide-text">Поддержка нескольких языков программирования.<br>Переключайся между ними в любой момент.</p>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="intro-slide" data-slide="4">
+                    <div class="slide-content">
+                        <div class="ready-icon"></div>
+                        <h2 class="slide-title">Готов <span class="highlight">создавать</span>?</h2>
+                        <p class="slide-text">Реши головоломки, пройди уровни,<br>и стань мастером CodeWorld!</p>
+                        <button class="start-button pixel-button">
+                            <span class="button-text">НАЧАТЬ ИГРУ</span>
+                            <span class="button-glow"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-navigation">
+                <div class="slide-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn prev-btn pixel-button" disabled>◀ НАЗАД</button>
+                    <button class="nav-btn next-btn pixel-button">ДАЛЕЕ ▶</button>
+                    <button class="nav-btn skip-btn">Пропустить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-layout">
+            <!-- Top Bar -->
+            <header class="game-header">
+                <div class="header-left">
+                    <span class="game-logo">CodeWorld</span>
+                    <span class="level-indicator">Уровень: <span id="current-level">1</span></span>
+                </div>
+                <div class="header-center">
+                    <div class="objective-display">
+                        <span class="objective-label">Задание:</span>
+                        <span id="current-objective">Помоги персонажу добраться до двери</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="javascript">JS</button>
+                        <button class="lang-btn" data-lang="python">PY</button>
+                        <button class="lang-btn" data-lang="java">Java</button>
+                    </div>
+                    <button class="menu-btn pixel-button">☰</button>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="game-main">
+                <!-- Game Canvas Area -->
+                <section class="game-area">
+                    <div class="canvas-container">
+                        <canvas id="game-canvas"></canvas>
+                        <div class="game-overlay" id="game-overlay"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button id="run-code-btn" class="control-btn run-btn pixel-button">
+                            <span class="btn-icon">▶</span>
+                            <span class="btn-text">ЗАПУСТИТЬ</span>
+                        </button>
+                        <button id="stop-code-btn" class="control-btn stop-btn pixel-button">
+                            <span class="btn-icon">■</span>
+                            <span class="btn-text">СТОП</span>
+                        </button>
+                        <button id="reset-btn" class="control-btn reset-btn pixel-button">
+                            <span class="btn-icon">↺</span>
+                            <span class="btn-text">СБРОС</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Code Editor Area -->
+                <section class="editor-area">
+                    <div class="editor-header">
+                        <span class="editor-title">◇ Редактор кода</span>
+                        <div class="editor-tabs">
+                            <button class="tab-btn active" data-tab="main">main.js</button>
+                            <button class="tab-btn" data-tab="help">Справка</button>
+                        </div>
+                    </div>
+                    <div class="editor-container">
+                        <div id="code-editor" class="code-editor"></div>
+                    </div>
+                    <div class="editor-footer">
+                        <span class="editor-status">Готов к выполнению</span>
+                        <span class="editor-position">Строка: 1, Столбец: 1</span>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Console/Output Panel -->
+            <footer class="console-area">
+                <div class="console-header">
+                    <span class="console-title">◇ Консоль</span>
+                    <div class="console-tabs">
+                        <button class="console-tab active" data-console="output">Вывод</button>
+                        <button class="console-tab" data-console="errors">Ошибки</button>
+                        <button class="console-tab" data-console="hints">Подсказки</button>
+                    </div>
+                    <button class="clear-console-btn">Очистить</button>
+                </div>
+                <div class="console-content">
+                    <div id="console-output" class="console-panel active">
+                        <div class="console-welcome">
+                            <span class="console-line system">◈ CodeWorld Console v1.0</span>
+                            <span class="console-line info">◈ Добро пожаловать! Напиши код и нажми "ЗАПУСТИТЬ"</span>
+                        </div>
+                    </div>
+                    <div id="console-errors" class="console-panel"></div>
+                    <div id="console-hints" class="console-panel">
+                        <div class="hint-item">
+                            <span class="hint-icon">💡</span>
+                            <span class="hint-text">Используй <code>hero.move("up")</code> для движения вверх</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Side Panel (Achievements, Menu, etc.) -->
+        <aside class="side-panel" id="side-panel">
+            <div class="panel-header">
+                <h3 class="panel-title">Меню</h3>
+                <button class="close-panel-btn">×</button>
+            </div>
+            <div class="panel-content">
+                <nav class="panel-nav">
+                    <button class="panel-nav-btn" data-panel="levels">🗺️ Уровни</button>
+                    <button class="panel-nav-btn" data-panel="achievements">🏆 Достижения</button>
+                    <button class="panel-nav-btn" data-panel="settings">⚙️ Настройки</button>
+                    <button class="panel-nav-btn" data-panel="docs">📖 Документация</button>
+                </nav>
+                <div class="panel-sections">
+                    <div class="panel-section active" id="panel-levels">
+                        <h4>Выбери уровень</h4>
+                        <div class="levels-grid" id="levels-grid"></div>
+                    </div>
+                    <div class="panel-section" id="panel-achievements">
+                        <h4>Твои достижения</h4>
+                        <div class="achievements-list" id="achievements-list"></div>
+                    </div>
+                    <div class="panel-section" id="panel-settings">
+                        <h4>Настройки</h4>
+                        <div class="settings-list">
+                            <label class="setting-item">
+                                <span>Звуковые эффекты</span>
+                                <input type="checkbox" id="sound-toggle" checked>
+                            </label>
+                            <label class="setting-item">
+                                <span>Тёмная тема</span>
+                                <input type="checkbox" id="theme-toggle" checked>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="panel-section" id="panel-docs">
+                        <h4>API Документация</h4>
+                        <div class="docs-content" id="docs-content"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notification-container"></div>
+
+    <!-- Modal System -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
