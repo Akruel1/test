@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Rift - Programmable Game World</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-card">
+        <div class="pixel-title">CODEX RIFT</div>
+        <div class="pixel-subtitle">Booting programmable world</div>
+        <div class="loading-art">
+          <div class="pixel-grid"></div>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-bar-fill" id="loading-bar-fill"></div>
+        </div>
+        <div class="loading-status" id="loading-status">Booting simulation core</div>
+      </div>
+    </div>
+
+    <div id="intro" class="intro hidden" aria-hidden="true">
+      <div class="intro-card">
+        <div class="intro-header">
+          <div class="intro-title">Welcome to Codex Rift</div>
+          <div class="intro-subtitle">A programmable game world</div>
+        </div>
+        <div class="intro-slides">
+          <div class="intro-slide active" data-slide="0">
+            <h2>Code is the only controller</h2>
+            <p>
+              There are no movement keys here. The world listens to scripts and
+              reacts to logic.
+            </p>
+          </div>
+          <div class="intro-slide" data-slide="1">
+            <h2>Learn by building the world</h2>
+            <p>
+              Every puzzle is a programming task, and every solution changes the
+              environment.
+            </p>
+          </div>
+          <div class="intro-slide" data-slide="2">
+            <h2>Multiple languages, one universe</h2>
+            <p>
+              Switch between Python, Java, and C++. The same ideas drive
+              different syntax.
+            </p>
+          </div>
+          <div class="intro-slide" data-slide="3">
+            <h2>Errors are events</h2>
+            <p>
+              When code breaks, the world glitches. Fix the logic to stabilize
+              the simulation.
+            </p>
+          </div>
+        </div>
+        <div class="intro-controls">
+          <button id="intro-skip" class="ghost">Skip</button>
+          <div class="intro-dots" id="intro-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button id="intro-next" class="primary">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden" aria-hidden="true">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">CR</div>
+          <div class="brand-text">
+            <div class="brand-title">Codex Rift</div>
+            <div class="brand-subtitle">Programmable game world</div>
+          </div>
+        </div>
+        <div class="top-controls">
+          <div class="control-group">
+            <label for="language-select">Language</label>
+            <select id="language-select">
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="cpp">C++</option>
+            </select>
+          </div>
+          <button id="run-button" class="primary">Run Code</button>
+          <button id="reset-button" class="ghost">Reset World</button>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel game-panel">
+          <div class="panel-header">
+            <span>World Simulation</span>
+            <div class="panel-badges">
+              <span class="badge">Safe Sandbox</span>
+              <span class="badge">Real Time</span>
+            </div>
+          </div>
+          <canvas id="game-canvas" width="640" height="352"></canvas>
+          <div class="status-strip">
+            <div>Energy: <span id="energy-value">100</span></div>
+            <div>Zone: Neon Delta</div>
+            <div>Objective: Reach the Gate</div>
+          </div>
+        </section>
+
+        <section class="panel editor-panel">
+          <div class="panel-header">
+            <span>Code Editor</span>
+            <div class="panel-actions">
+              <button id="sample-button" class="ghost">Load Sample</button>
+              <button id="clear-button" class="ghost">Clear</button>
+            </div>
+          </div>
+          <textarea id="code-editor" spellcheck="false"></textarea>
+          <div class="command-hints">
+            <div class="hint-title">Commands</div>
+            <ul id="command-list"></ul>
+          </div>
+        </section>
+
+        <section class="panel console-panel">
+          <div class="panel-header">
+            <span>Signal Console</span>
+            <div class="panel-badges">
+              <span class="badge">Events</span>
+              <span class="badge error">Anomalies</span>
+            </div>
+          </div>
+          <div id="console-output" class="console-output"></div>
+        </section>
+
+        <section class="panel mission-panel">
+          <div class="panel-header">
+            <span>Quests and Achievements</span>
+          </div>
+          <div class="mission-list" id="mission-list">
+            <div class="mission" data-mission="first-run">
+              <div class="mission-title">First Execution</div>
+              <div class="mission-desc">Run any script to sync with the world.</div>
+              <div class="mission-status">Locked</div>
+            </div>
+            <div class="mission" data-mission="gate-unlock">
+              <div class="mission-title">Unlock the Gate</div>
+              <div class="mission-desc">Reach the neon gate in the east sector.</div>
+              <div class="mission-status">Locked</div>
+            </div>
+            <div class="mission" data-mission="beacon-online">
+              <div class="mission-title">Beacon Online</div>
+              <div class="mission-desc">Run a scan when you are near the beacon.</div>
+              <div class="mission-status">Locked</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
