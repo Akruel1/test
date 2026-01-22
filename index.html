@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Code Realms - Programmed World</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="boot-screen" class="overlay">
+      <div class="boot-card">
+        <div class="boot-title">CODE REALMS</div>
+        <div class="boot-subtitle">Initializing the programmed world</div>
+        <div class="boot-bar">
+          <div id="boot-bar-fill" class="boot-bar-fill"></div>
+        </div>
+        <div id="boot-status" class="boot-status">Loading core modules...</div>
+        <div class="boot-grid">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro" class="overlay hidden">
+      <div class="intro-card">
+        <div class="intro-header">
+          <div class="intro-title" id="intro-title"></div>
+          <div class="intro-progress">
+            <span id="intro-progress-bar"></span>
+          </div>
+        </div>
+        <div class="intro-body" id="intro-body"></div>
+        <div class="intro-actions">
+          <button id="intro-skip" class="ghost-button" type="button">Skip</button>
+          <button id="intro-next" class="primary-button" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-logo"></div>
+          <div class="brand-text">
+            <div class="brand-title">CODE REALMS</div>
+            <div class="brand-subtitle">Programmed World Interface</div>
+          </div>
+        </div>
+        <div class="status">
+          <div class="status-label">World Status</div>
+          <div id="world-status" class="status-value">Ready</div>
+        </div>
+        <div class="controls">
+          <label class="control-label" for="language-select">Language</label>
+          <select id="language-select">
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+          </select>
+          <button id="run-code" class="primary-button" type="button">Run Program</button>
+          <button id="reset-world" class="ghost-button" type="button">Reset World</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="panel world-panel">
+          <div class="panel-header">
+            <div>
+              <h2>World Field</h2>
+              <p class="panel-subtitle">Observe the programmed realm in real time.</p>
+            </div>
+            <div class="mission">
+              <div class="mission-label">Current Mission</div>
+              <div id="mission-text" class="mission-text">Reach the neon portal.</div>
+            </div>
+          </div>
+          <div class="world-shell">
+            <div class="world-hud">
+              <div class="hud-item">
+                <div class="hud-label">Level</div>
+                <div id="hud-level" class="hud-value">1</div>
+              </div>
+              <div class="hud-item">
+                <div class="hud-label">Energy</div>
+                <div id="hud-energy" class="hud-value">100</div>
+              </div>
+              <div class="hud-item">
+                <div class="hud-label">Signal</div>
+                <div id="hud-signal" class="hud-value">Stable</div>
+              </div>
+            </div>
+            <div class="world-frame">
+              <canvas id="world-canvas" width="640" height="360"></canvas>
+            </div>
+            <div class="world-tip">
+              The world responds only to code. Use move(), wait(), and speak().
+            </div>
+          </div>
+        </section>
+
+        <section class="panel editor-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Code Console</h2>
+              <p class="panel-subtitle">Write commands to control the world.</p>
+            </div>
+            <div class="panel-hints">
+              <div class="hint">move("right", 2)</div>
+              <div class="hint">speak("Hello, realm")</div>
+              <div class="hint">wait(1)</div>
+            </div>
+          </div>
+          <div class="editor-shell">
+            <textarea
+              id="code-editor"
+              spellcheck="false"
+              aria-label="Code editor"
+            ></textarea>
+          </div>
+          <div class="editor-footer">
+            <div class="footer-label">Execution Profile</div>
+            <div class="footer-value">Sandboxed simulation with scripted commands</div>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel log-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Signal Log</h2>
+            <p class="panel-subtitle">Feedback appears as world events.</p>
+          </div>
+          <div class="log-controls">
+            <button id="clear-log" class="ghost-button" type="button">Clear Log</button>
+          </div>
+        </div>
+        <div id="log-output" class="log-output"></div>
+        <div class="log-footer">
+          <div class="achievements">
+            <div class="achievements-header">Achievements</div>
+            <ul id="achievement-list" class="achievement-list"></ul>
+          </div>
+          <div class="storage-status">
+            Progress saves locally in your browser storage.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
