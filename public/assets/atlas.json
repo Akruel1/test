@@ -1,0 +1,2836 @@
+{
+  "texture": {
+    "image": "enemies_atlas.png",
+    "sourceImage": "enemies_atlas_source.jpg",
+    "width": 768,
+    "height": 1280,
+    "format": "PNG",
+    "sourceFormat": "JPEG"
+  },
+  "frames": {
+    "enemy_goblin_idle_0": {
+      "x": 0,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 0
+    },
+    "enemy_goblin_idle_1": {
+      "x": 64,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 0
+    },
+    "enemy_goblin_idle_2": {
+      "x": 128,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 0
+    },
+    "enemy_goblin_idle_3": {
+      "x": 192,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 0
+    },
+    "enemy_goblin_idle_4": {
+      "x": 256,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 0
+    },
+    "enemy_goblin_idle_5": {
+      "x": 320,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 0
+    },
+    "enemy_goblin_move_0": {
+      "x": 0,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 1
+    },
+    "enemy_goblin_move_1": {
+      "x": 64,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 1
+    },
+    "enemy_goblin_move_2": {
+      "x": 128,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 1
+    },
+    "enemy_goblin_move_3": {
+      "x": 192,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 1
+    },
+    "enemy_goblin_move_4": {
+      "x": 256,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 1
+    },
+    "enemy_goblin_move_5": {
+      "x": 320,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 1
+    },
+    "enemy_goblin_attack_0": {
+      "x": 0,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 2
+    },
+    "enemy_goblin_attack_1": {
+      "x": 64,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 2
+    },
+    "enemy_goblin_attack_2": {
+      "x": 128,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 2
+    },
+    "enemy_goblin_attack_3": {
+      "x": 192,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 2
+    },
+    "enemy_goblin_attack_4": {
+      "x": 256,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 2
+    },
+    "enemy_goblin_attack_5": {
+      "x": 320,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 2
+    },
+    "enemy_goblin_hit_0": {
+      "x": 0,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 3
+    },
+    "enemy_goblin_hit_1": {
+      "x": 64,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 3
+    },
+    "enemy_goblin_hit_2": {
+      "x": 128,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 3
+    },
+    "enemy_goblin_hit_3": {
+      "x": 192,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 3
+    },
+    "enemy_goblin_hit_4": {
+      "x": 256,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 3
+    },
+    "enemy_goblin_hit_5": {
+      "x": 320,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 3
+    },
+    "enemy_goblin_die_0": {
+      "x": 0,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 4
+    },
+    "enemy_goblin_die_1": {
+      "x": 64,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 4
+    },
+    "enemy_goblin_die_2": {
+      "x": 128,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 4
+    },
+    "enemy_goblin_die_3": {
+      "x": 192,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 4
+    },
+    "enemy_goblin_die_4": {
+      "x": 256,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 4
+    },
+    "enemy_goblin_die_5": {
+      "x": 320,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 4
+    },
+    "enemy_skeleton_idle_0": {
+      "x": 384,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 0
+    },
+    "enemy_skeleton_idle_1": {
+      "x": 448,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 0
+    },
+    "enemy_skeleton_idle_2": {
+      "x": 512,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 0
+    },
+    "enemy_skeleton_idle_3": {
+      "x": 576,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 0
+    },
+    "enemy_skeleton_idle_4": {
+      "x": 640,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 0
+    },
+    "enemy_skeleton_idle_5": {
+      "x": 704,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 0
+    },
+    "enemy_skeleton_move_0": {
+      "x": 384,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 1
+    },
+    "enemy_skeleton_move_1": {
+      "x": 448,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 1
+    },
+    "enemy_skeleton_move_2": {
+      "x": 512,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 1
+    },
+    "enemy_skeleton_move_3": {
+      "x": 576,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 1
+    },
+    "enemy_skeleton_move_4": {
+      "x": 640,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 1
+    },
+    "enemy_skeleton_move_5": {
+      "x": 704,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 1
+    },
+    "enemy_skeleton_attack_0": {
+      "x": 384,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 2
+    },
+    "enemy_skeleton_attack_1": {
+      "x": 448,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 2
+    },
+    "enemy_skeleton_attack_2": {
+      "x": 512,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 2
+    },
+    "enemy_skeleton_attack_3": {
+      "x": 576,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 2
+    },
+    "enemy_skeleton_attack_4": {
+      "x": 640,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 2
+    },
+    "enemy_skeleton_attack_5": {
+      "x": 704,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 2
+    },
+    "enemy_skeleton_hit_0": {
+      "x": 384,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 3
+    },
+    "enemy_skeleton_hit_1": {
+      "x": 448,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 3
+    },
+    "enemy_skeleton_hit_2": {
+      "x": 512,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 3
+    },
+    "enemy_skeleton_hit_3": {
+      "x": 576,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 3
+    },
+    "enemy_skeleton_hit_4": {
+      "x": 640,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 3
+    },
+    "enemy_skeleton_hit_5": {
+      "x": 704,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 3
+    },
+    "enemy_skeleton_die_0": {
+      "x": 384,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 4
+    },
+    "enemy_skeleton_die_1": {
+      "x": 448,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 4
+    },
+    "enemy_skeleton_die_2": {
+      "x": 512,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 4
+    },
+    "enemy_skeleton_die_3": {
+      "x": 576,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 4
+    },
+    "enemy_skeleton_die_4": {
+      "x": 640,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 4
+    },
+    "enemy_skeleton_die_5": {
+      "x": 704,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 4
+    },
+    "enemy_orc_idle_0": {
+      "x": 0,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 5
+    },
+    "enemy_orc_idle_1": {
+      "x": 64,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 5
+    },
+    "enemy_orc_idle_2": {
+      "x": 128,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 5
+    },
+    "enemy_orc_idle_3": {
+      "x": 192,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 5
+    },
+    "enemy_orc_idle_4": {
+      "x": 256,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 5
+    },
+    "enemy_orc_idle_5": {
+      "x": 320,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 5
+    },
+    "enemy_orc_move_0": {
+      "x": 0,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 6
+    },
+    "enemy_orc_move_1": {
+      "x": 64,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 6
+    },
+    "enemy_orc_move_2": {
+      "x": 128,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 6
+    },
+    "enemy_orc_move_3": {
+      "x": 192,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 6
+    },
+    "enemy_orc_move_4": {
+      "x": 256,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 6
+    },
+    "enemy_orc_move_5": {
+      "x": 320,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 6
+    },
+    "enemy_orc_attack_0": {
+      "x": 0,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 7
+    },
+    "enemy_orc_attack_1": {
+      "x": 64,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 7
+    },
+    "enemy_orc_attack_2": {
+      "x": 128,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 7
+    },
+    "enemy_orc_attack_3": {
+      "x": 192,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 7
+    },
+    "enemy_orc_attack_4": {
+      "x": 256,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 7
+    },
+    "enemy_orc_attack_5": {
+      "x": 320,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 7
+    },
+    "enemy_orc_hit_0": {
+      "x": 0,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 8
+    },
+    "enemy_orc_hit_1": {
+      "x": 64,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 8
+    },
+    "enemy_orc_hit_2": {
+      "x": 128,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 8
+    },
+    "enemy_orc_hit_3": {
+      "x": 192,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 8
+    },
+    "enemy_orc_hit_4": {
+      "x": 256,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 8
+    },
+    "enemy_orc_hit_5": {
+      "x": 320,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 8
+    },
+    "enemy_orc_die_0": {
+      "x": 0,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 9
+    },
+    "enemy_orc_die_1": {
+      "x": 64,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 9
+    },
+    "enemy_orc_die_2": {
+      "x": 128,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 9
+    },
+    "enemy_orc_die_3": {
+      "x": 192,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 9
+    },
+    "enemy_orc_die_4": {
+      "x": 256,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 9
+    },
+    "enemy_orc_die_5": {
+      "x": 320,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 9
+    },
+    "enemy_archer_idle_0": {
+      "x": 384,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 5
+    },
+    "enemy_archer_idle_1": {
+      "x": 448,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 5
+    },
+    "enemy_archer_idle_2": {
+      "x": 512,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 5
+    },
+    "enemy_archer_idle_3": {
+      "x": 576,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 5
+    },
+    "enemy_archer_idle_4": {
+      "x": 640,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 5
+    },
+    "enemy_archer_idle_5": {
+      "x": 704,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 5
+    },
+    "enemy_archer_move_0": {
+      "x": 384,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 6
+    },
+    "enemy_archer_move_1": {
+      "x": 448,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 6
+    },
+    "enemy_archer_move_2": {
+      "x": 512,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 6
+    },
+    "enemy_archer_move_3": {
+      "x": 576,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 6
+    },
+    "enemy_archer_move_4": {
+      "x": 640,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 6
+    },
+    "enemy_archer_move_5": {
+      "x": 704,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 6
+    },
+    "enemy_archer_attack_0": {
+      "x": 384,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 7
+    },
+    "enemy_archer_attack_1": {
+      "x": 448,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 7
+    },
+    "enemy_archer_attack_2": {
+      "x": 512,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 7
+    },
+    "enemy_archer_attack_3": {
+      "x": 576,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 7
+    },
+    "enemy_archer_attack_4": {
+      "x": 640,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 7
+    },
+    "enemy_archer_attack_5": {
+      "x": 704,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 7
+    },
+    "enemy_archer_hit_0": {
+      "x": 384,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 8
+    },
+    "enemy_archer_hit_1": {
+      "x": 448,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 8
+    },
+    "enemy_archer_hit_2": {
+      "x": 512,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 8
+    },
+    "enemy_archer_hit_3": {
+      "x": 576,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 8
+    },
+    "enemy_archer_hit_4": {
+      "x": 640,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 8
+    },
+    "enemy_archer_hit_5": {
+      "x": 704,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 8
+    },
+    "enemy_archer_die_0": {
+      "x": 384,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 9
+    },
+    "enemy_archer_die_1": {
+      "x": 448,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 9
+    },
+    "enemy_archer_die_2": {
+      "x": 512,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 9
+    },
+    "enemy_archer_die_3": {
+      "x": 576,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 9
+    },
+    "enemy_archer_die_4": {
+      "x": 640,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 9
+    },
+    "enemy_archer_die_5": {
+      "x": 704,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 9
+    },
+    "enemy_mage_idle_0": {
+      "x": 0,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 10
+    },
+    "enemy_mage_idle_1": {
+      "x": 64,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 10
+    },
+    "enemy_mage_idle_2": {
+      "x": 128,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 10
+    },
+    "enemy_mage_idle_3": {
+      "x": 192,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 10
+    },
+    "enemy_mage_idle_4": {
+      "x": 256,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 10
+    },
+    "enemy_mage_idle_5": {
+      "x": 320,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 10
+    },
+    "enemy_mage_move_0": {
+      "x": 0,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 11
+    },
+    "enemy_mage_move_1": {
+      "x": 64,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 11
+    },
+    "enemy_mage_move_2": {
+      "x": 128,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 11
+    },
+    "enemy_mage_move_3": {
+      "x": 192,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 11
+    },
+    "enemy_mage_move_4": {
+      "x": 256,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 11
+    },
+    "enemy_mage_move_5": {
+      "x": 320,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 11
+    },
+    "enemy_mage_cast_0": {
+      "x": 0,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 12
+    },
+    "enemy_mage_cast_1": {
+      "x": 64,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 12
+    },
+    "enemy_mage_cast_2": {
+      "x": 128,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 12
+    },
+    "enemy_mage_cast_3": {
+      "x": 192,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 12
+    },
+    "enemy_mage_cast_4": {
+      "x": 256,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 12
+    },
+    "enemy_mage_cast_5": {
+      "x": 320,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 12
+    },
+    "enemy_mage_hit_0": {
+      "x": 0,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 13
+    },
+    "enemy_mage_hit_1": {
+      "x": 64,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 13
+    },
+    "enemy_mage_hit_2": {
+      "x": 128,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 13
+    },
+    "enemy_mage_hit_3": {
+      "x": 192,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 13
+    },
+    "enemy_mage_hit_4": {
+      "x": 256,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 13
+    },
+    "enemy_mage_hit_5": {
+      "x": 320,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 13
+    },
+    "enemy_mage_die_0": {
+      "x": 0,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 14
+    },
+    "enemy_mage_die_1": {
+      "x": 64,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 14
+    },
+    "enemy_mage_die_2": {
+      "x": 128,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 14
+    },
+    "enemy_mage_die_3": {
+      "x": 192,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 14
+    },
+    "enemy_mage_die_4": {
+      "x": 256,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 14
+    },
+    "enemy_mage_die_5": {
+      "x": 320,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 14
+    },
+    "enemy_knight_idle_0": {
+      "x": 384,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 10
+    },
+    "enemy_knight_idle_1": {
+      "x": 448,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 10
+    },
+    "enemy_knight_idle_2": {
+      "x": 512,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 10
+    },
+    "enemy_knight_idle_3": {
+      "x": 576,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 10
+    },
+    "enemy_knight_idle_4": {
+      "x": 640,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 10
+    },
+    "enemy_knight_idle_5": {
+      "x": 704,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 10
+    },
+    "enemy_knight_move_0": {
+      "x": 384,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 11
+    },
+    "enemy_knight_move_1": {
+      "x": 448,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 11
+    },
+    "enemy_knight_move_2": {
+      "x": 512,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 11
+    },
+    "enemy_knight_move_3": {
+      "x": 576,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 11
+    },
+    "enemy_knight_move_4": {
+      "x": 640,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 11
+    },
+    "enemy_knight_move_5": {
+      "x": 704,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 11
+    },
+    "enemy_knight_attack_0": {
+      "x": 384,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 12
+    },
+    "enemy_knight_attack_1": {
+      "x": 448,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 12
+    },
+    "enemy_knight_attack_2": {
+      "x": 512,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 12
+    },
+    "enemy_knight_attack_3": {
+      "x": 576,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 12
+    },
+    "enemy_knight_attack_4": {
+      "x": 640,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 12
+    },
+    "enemy_knight_attack_5": {
+      "x": 704,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 12
+    },
+    "enemy_knight_hit_0": {
+      "x": 384,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 13
+    },
+    "enemy_knight_hit_1": {
+      "x": 448,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 13
+    },
+    "enemy_knight_hit_2": {
+      "x": 512,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 13
+    },
+    "enemy_knight_hit_3": {
+      "x": 576,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 13
+    },
+    "enemy_knight_hit_4": {
+      "x": 640,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 13
+    },
+    "enemy_knight_hit_5": {
+      "x": 704,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 13
+    },
+    "enemy_knight_die_0": {
+      "x": 384,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 14
+    },
+    "enemy_knight_die_1": {
+      "x": 448,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 14
+    },
+    "enemy_knight_die_2": {
+      "x": 512,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 14
+    },
+    "enemy_knight_die_3": {
+      "x": 576,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 14
+    },
+    "enemy_knight_die_4": {
+      "x": 640,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 14
+    },
+    "enemy_knight_die_5": {
+      "x": 704,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 14
+    },
+    "enemy_ice_golem_idle_0": {
+      "x": 0,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_idle_1": {
+      "x": 64,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_idle_2": {
+      "x": 128,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_idle_3": {
+      "x": 192,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_idle_4": {
+      "x": 256,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_idle_5": {
+      "x": 320,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 15
+    },
+    "enemy_ice_golem_move_0": {
+      "x": 0,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_move_1": {
+      "x": 64,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_move_2": {
+      "x": 128,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_move_3": {
+      "x": 192,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_move_4": {
+      "x": 256,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_move_5": {
+      "x": 320,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 16
+    },
+    "enemy_ice_golem_attack_0": {
+      "x": 0,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_attack_1": {
+      "x": 64,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_attack_2": {
+      "x": 128,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_attack_3": {
+      "x": 192,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_attack_4": {
+      "x": 256,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_attack_5": {
+      "x": 320,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 17
+    },
+    "enemy_ice_golem_hit_0": {
+      "x": 0,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_hit_1": {
+      "x": 64,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_hit_2": {
+      "x": 128,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_hit_3": {
+      "x": 192,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_hit_4": {
+      "x": 256,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_hit_5": {
+      "x": 320,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 18
+    },
+    "enemy_ice_golem_die_0": {
+      "x": 0,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 0,
+      "gridRow": 19
+    },
+    "enemy_ice_golem_die_1": {
+      "x": 64,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 1,
+      "gridRow": 19
+    },
+    "enemy_ice_golem_die_2": {
+      "x": 128,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 2,
+      "gridRow": 19
+    },
+    "enemy_ice_golem_die_3": {
+      "x": 192,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 3,
+      "gridRow": 19
+    },
+    "enemy_ice_golem_die_4": {
+      "x": 256,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 4,
+      "gridRow": 19
+    },
+    "enemy_ice_golem_die_5": {
+      "x": 320,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 5,
+      "gridRow": 19
+    },
+    "enemy_imp_idle_0": {
+      "x": 384,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 15
+    },
+    "enemy_imp_idle_1": {
+      "x": 448,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 15
+    },
+    "enemy_imp_idle_2": {
+      "x": 512,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 15
+    },
+    "enemy_imp_idle_3": {
+      "x": 576,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 15
+    },
+    "enemy_imp_idle_4": {
+      "x": 640,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 15
+    },
+    "enemy_imp_idle_5": {
+      "x": 704,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 15
+    },
+    "enemy_imp_move_0": {
+      "x": 384,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 16
+    },
+    "enemy_imp_move_1": {
+      "x": 448,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 16
+    },
+    "enemy_imp_move_2": {
+      "x": 512,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 16
+    },
+    "enemy_imp_move_3": {
+      "x": 576,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 16
+    },
+    "enemy_imp_move_4": {
+      "x": 640,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 16
+    },
+    "enemy_imp_move_5": {
+      "x": 704,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 16
+    },
+    "enemy_imp_attack_0": {
+      "x": 384,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 17
+    },
+    "enemy_imp_attack_1": {
+      "x": 448,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 17
+    },
+    "enemy_imp_attack_2": {
+      "x": 512,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 17
+    },
+    "enemy_imp_attack_3": {
+      "x": 576,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 17
+    },
+    "enemy_imp_attack_4": {
+      "x": 640,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 17
+    },
+    "enemy_imp_attack_5": {
+      "x": 704,
+      "y": 1088,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 17
+    },
+    "enemy_imp_hit_0": {
+      "x": 384,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 18
+    },
+    "enemy_imp_hit_1": {
+      "x": 448,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 18
+    },
+    "enemy_imp_hit_2": {
+      "x": 512,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 18
+    },
+    "enemy_imp_hit_3": {
+      "x": 576,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 18
+    },
+    "enemy_imp_hit_4": {
+      "x": 640,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 18
+    },
+    "enemy_imp_hit_5": {
+      "x": 704,
+      "y": 1152,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 18
+    },
+    "enemy_imp_die_0": {
+      "x": 384,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 6,
+      "gridRow": 19
+    },
+    "enemy_imp_die_1": {
+      "x": 448,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 7,
+      "gridRow": 19
+    },
+    "enemy_imp_die_2": {
+      "x": 512,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 8,
+      "gridRow": 19
+    },
+    "enemy_imp_die_3": {
+      "x": 576,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 9,
+      "gridRow": 19
+    },
+    "enemy_imp_die_4": {
+      "x": 640,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 10,
+      "gridRow": 19
+    },
+    "enemy_imp_die_5": {
+      "x": 704,
+      "y": 1216,
+      "width": 64,
+      "height": 64,
+      "gridCol": 11,
+      "gridRow": 19
+    }
+  },
+  "sprites": [
+    {
+      "id": "enemy_goblin",
+      "name": "Green Goblin",
+      "category": "enemy",
+      "visualDescription": "Small green humanoid with club/blade",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 0,
+      "gridOriginRow": 0,
+      "animations": {
+        "idle": "enemy_goblin_idle",
+        "move": "enemy_goblin_move",
+        "attack": "enemy_goblin_attack",
+        "hit": "enemy_goblin_hit",
+        "die": "enemy_goblin_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    },
+    {
+      "id": "enemy_skeleton",
+      "name": "Skeleton Warrior",
+      "category": "enemy",
+      "visualDescription": "White/grey skeletal figure with sword",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 6,
+      "gridOriginRow": 0,
+      "animations": {
+        "idle": "enemy_skeleton_idle",
+        "move": "enemy_skeleton_move",
+        "attack": "enemy_skeleton_attack",
+        "hit": "enemy_skeleton_hit",
+        "die": "enemy_skeleton_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    },
+    {
+      "id": "enemy_orc",
+      "name": "Orc Warrior",
+      "category": "enemy",
+      "visualDescription": "Large green orc with two-handed axe",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 0,
+      "gridOriginRow": 5,
+      "animations": {
+        "idle": "enemy_orc_idle",
+        "move": "enemy_orc_move",
+        "attack": "enemy_orc_attack",
+        "hit": "enemy_orc_hit",
+        "die": "enemy_orc_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    },
+    {
+      "id": "enemy_archer",
+      "name": "Hooded Archer",
+      "category": "enemy",
+      "visualDescription": "Hooded figure in dark green cloak with bow",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 6,
+      "gridOriginRow": 5,
+      "animations": {
+        "idle": "enemy_archer_idle",
+        "move": "enemy_archer_move",
+        "attack": "enemy_archer_attack",
+        "hit": "enemy_archer_hit",
+        "die": "enemy_archer_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null,
+      "notes": "Bow attack frames include an in-cell arrow; not a separate projectile sprite."
+    },
+    {
+      "id": "enemy_mage",
+      "name": "Purple Mage",
+      "category": "enemy",
+      "visualDescription": "Hooded figure in purple robes with staff and orb",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 0,
+      "gridOriginRow": 10,
+      "animations": {
+        "idle": "enemy_mage_idle",
+        "move": "enemy_mage_move",
+        "cast": "enemy_mage_cast",
+        "hit": "enemy_mage_hit",
+        "die": "enemy_mage_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "cast": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    },
+    {
+      "id": "enemy_knight",
+      "name": "Dark Knight",
+      "category": "enemy",
+      "visualDescription": "Heavy dark plate armor with broadsword",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 6,
+      "gridOriginRow": 10,
+      "animations": {
+        "idle": "enemy_knight_idle",
+        "move": "enemy_knight_move",
+        "attack": "enemy_knight_attack",
+        "hit": "enemy_knight_hit",
+        "die": "enemy_knight_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    },
+    {
+      "id": "enemy_ice_golem",
+      "name": "Ice Golem",
+      "category": "enemy",
+      "visualDescription": "Bulky blue crystalline elemental",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 0,
+      "gridOriginRow": 15,
+      "animations": {
+        "idle": "enemy_ice_golem_idle",
+        "move": "enemy_ice_golem_move",
+        "attack": "enemy_ice_golem_attack",
+        "hit": "enemy_ice_golem_hit",
+        "die": "enemy_ice_golem_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null,
+      "notes": "Attack frames include ground ice crystal effect within the same cells."
+    },
+    {
+      "id": "enemy_imp",
+      "name": "Red Imp",
+      "category": "enemy",
+      "visualDescription": "Small red winged demon with horns and tail",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "gridOriginCol": 6,
+      "gridOriginRow": 15,
+      "animations": {
+        "idle": "enemy_imp_idle",
+        "move": "enemy_imp_move",
+        "attack": "enemy_imp_attack",
+        "hit": "enemy_imp_hit",
+        "die": "enemy_imp_die"
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "anchorConfidence": "suggested_convention",
+      "loop": {
+        "die": false,
+        "hit": false,
+        "move": true,
+        "idle": true,
+        "attack": false
+      },
+      "frameDurationMs": null,
+      "gameplayStats": null
+    }
+  ],
+  "animations": {
+    "enemy_goblin_idle": {
+      "id": "enemy_goblin_idle",
+      "spriteId": "enemy_goblin",
+      "name": "idle",
+      "frames": [
+        "enemy_goblin_idle_0",
+        "enemy_goblin_idle_1",
+        "enemy_goblin_idle_2",
+        "enemy_goblin_idle_3",
+        "enemy_goblin_idle_4",
+        "enemy_goblin_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_goblin_move": {
+      "id": "enemy_goblin_move",
+      "spriteId": "enemy_goblin",
+      "name": "move",
+      "frames": [
+        "enemy_goblin_move_0",
+        "enemy_goblin_move_1",
+        "enemy_goblin_move_2",
+        "enemy_goblin_move_3",
+        "enemy_goblin_move_4",
+        "enemy_goblin_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_goblin_attack": {
+      "id": "enemy_goblin_attack",
+      "spriteId": "enemy_goblin",
+      "name": "attack",
+      "frames": [
+        "enemy_goblin_attack_0",
+        "enemy_goblin_attack_1",
+        "enemy_goblin_attack_2",
+        "enemy_goblin_attack_3",
+        "enemy_goblin_attack_4",
+        "enemy_goblin_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_goblin_hit": {
+      "id": "enemy_goblin_hit",
+      "spriteId": "enemy_goblin",
+      "name": "hit",
+      "frames": [
+        "enemy_goblin_hit_0",
+        "enemy_goblin_hit_1",
+        "enemy_goblin_hit_2",
+        "enemy_goblin_hit_3",
+        "enemy_goblin_hit_4",
+        "enemy_goblin_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_goblin_die": {
+      "id": "enemy_goblin_die",
+      "spriteId": "enemy_goblin",
+      "name": "die",
+      "frames": [
+        "enemy_goblin_die_0",
+        "enemy_goblin_die_1",
+        "enemy_goblin_die_2",
+        "enemy_goblin_die_3",
+        "enemy_goblin_die_4",
+        "enemy_goblin_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_skeleton_idle": {
+      "id": "enemy_skeleton_idle",
+      "spriteId": "enemy_skeleton",
+      "name": "idle",
+      "frames": [
+        "enemy_skeleton_idle_0",
+        "enemy_skeleton_idle_1",
+        "enemy_skeleton_idle_2",
+        "enemy_skeleton_idle_3",
+        "enemy_skeleton_idle_4",
+        "enemy_skeleton_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_skeleton_move": {
+      "id": "enemy_skeleton_move",
+      "spriteId": "enemy_skeleton",
+      "name": "move",
+      "frames": [
+        "enemy_skeleton_move_0",
+        "enemy_skeleton_move_1",
+        "enemy_skeleton_move_2",
+        "enemy_skeleton_move_3",
+        "enemy_skeleton_move_4",
+        "enemy_skeleton_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_skeleton_attack": {
+      "id": "enemy_skeleton_attack",
+      "spriteId": "enemy_skeleton",
+      "name": "attack",
+      "frames": [
+        "enemy_skeleton_attack_0",
+        "enemy_skeleton_attack_1",
+        "enemy_skeleton_attack_2",
+        "enemy_skeleton_attack_3",
+        "enemy_skeleton_attack_4",
+        "enemy_skeleton_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_skeleton_hit": {
+      "id": "enemy_skeleton_hit",
+      "spriteId": "enemy_skeleton",
+      "name": "hit",
+      "frames": [
+        "enemy_skeleton_hit_0",
+        "enemy_skeleton_hit_1",
+        "enemy_skeleton_hit_2",
+        "enemy_skeleton_hit_3",
+        "enemy_skeleton_hit_4",
+        "enemy_skeleton_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_skeleton_die": {
+      "id": "enemy_skeleton_die",
+      "spriteId": "enemy_skeleton",
+      "name": "die",
+      "frames": [
+        "enemy_skeleton_die_0",
+        "enemy_skeleton_die_1",
+        "enemy_skeleton_die_2",
+        "enemy_skeleton_die_3",
+        "enemy_skeleton_die_4",
+        "enemy_skeleton_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_orc_idle": {
+      "id": "enemy_orc_idle",
+      "spriteId": "enemy_orc",
+      "name": "idle",
+      "frames": [
+        "enemy_orc_idle_0",
+        "enemy_orc_idle_1",
+        "enemy_orc_idle_2",
+        "enemy_orc_idle_3",
+        "enemy_orc_idle_4",
+        "enemy_orc_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_orc_move": {
+      "id": "enemy_orc_move",
+      "spriteId": "enemy_orc",
+      "name": "move",
+      "frames": [
+        "enemy_orc_move_0",
+        "enemy_orc_move_1",
+        "enemy_orc_move_2",
+        "enemy_orc_move_3",
+        "enemy_orc_move_4",
+        "enemy_orc_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_orc_attack": {
+      "id": "enemy_orc_attack",
+      "spriteId": "enemy_orc",
+      "name": "attack",
+      "frames": [
+        "enemy_orc_attack_0",
+        "enemy_orc_attack_1",
+        "enemy_orc_attack_2",
+        "enemy_orc_attack_3",
+        "enemy_orc_attack_4",
+        "enemy_orc_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_orc_hit": {
+      "id": "enemy_orc_hit",
+      "spriteId": "enemy_orc",
+      "name": "hit",
+      "frames": [
+        "enemy_orc_hit_0",
+        "enemy_orc_hit_1",
+        "enemy_orc_hit_2",
+        "enemy_orc_hit_3",
+        "enemy_orc_hit_4",
+        "enemy_orc_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_orc_die": {
+      "id": "enemy_orc_die",
+      "spriteId": "enemy_orc",
+      "name": "die",
+      "frames": [
+        "enemy_orc_die_0",
+        "enemy_orc_die_1",
+        "enemy_orc_die_2",
+        "enemy_orc_die_3",
+        "enemy_orc_die_4",
+        "enemy_orc_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_archer_idle": {
+      "id": "enemy_archer_idle",
+      "spriteId": "enemy_archer",
+      "name": "idle",
+      "frames": [
+        "enemy_archer_idle_0",
+        "enemy_archer_idle_1",
+        "enemy_archer_idle_2",
+        "enemy_archer_idle_3",
+        "enemy_archer_idle_4",
+        "enemy_archer_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_archer_move": {
+      "id": "enemy_archer_move",
+      "spriteId": "enemy_archer",
+      "name": "move",
+      "frames": [
+        "enemy_archer_move_0",
+        "enemy_archer_move_1",
+        "enemy_archer_move_2",
+        "enemy_archer_move_3",
+        "enemy_archer_move_4",
+        "enemy_archer_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_archer_attack": {
+      "id": "enemy_archer_attack",
+      "spriteId": "enemy_archer",
+      "name": "attack",
+      "frames": [
+        "enemy_archer_attack_0",
+        "enemy_archer_attack_1",
+        "enemy_archer_attack_2",
+        "enemy_archer_attack_3",
+        "enemy_archer_attack_4",
+        "enemy_archer_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_archer_hit": {
+      "id": "enemy_archer_hit",
+      "spriteId": "enemy_archer",
+      "name": "hit",
+      "frames": [
+        "enemy_archer_hit_0",
+        "enemy_archer_hit_1",
+        "enemy_archer_hit_2",
+        "enemy_archer_hit_3",
+        "enemy_archer_hit_4",
+        "enemy_archer_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_archer_die": {
+      "id": "enemy_archer_die",
+      "spriteId": "enemy_archer",
+      "name": "die",
+      "frames": [
+        "enemy_archer_die_0",
+        "enemy_archer_die_1",
+        "enemy_archer_die_2",
+        "enemy_archer_die_3",
+        "enemy_archer_die_4",
+        "enemy_archer_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_mage_idle": {
+      "id": "enemy_mage_idle",
+      "spriteId": "enemy_mage",
+      "name": "idle",
+      "frames": [
+        "enemy_mage_idle_0",
+        "enemy_mage_idle_1",
+        "enemy_mage_idle_2",
+        "enemy_mage_idle_3",
+        "enemy_mage_idle_4",
+        "enemy_mage_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_mage_move": {
+      "id": "enemy_mage_move",
+      "spriteId": "enemy_mage",
+      "name": "move",
+      "frames": [
+        "enemy_mage_move_0",
+        "enemy_mage_move_1",
+        "enemy_mage_move_2",
+        "enemy_mage_move_3",
+        "enemy_mage_move_4",
+        "enemy_mage_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_mage_cast": {
+      "id": "enemy_mage_cast",
+      "spriteId": "enemy_mage",
+      "name": "cast",
+      "frames": [
+        "enemy_mage_cast_0",
+        "enemy_mage_cast_1",
+        "enemy_mage_cast_2",
+        "enemy_mage_cast_3",
+        "enemy_mage_cast_4",
+        "enemy_mage_cast_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_mage_hit": {
+      "id": "enemy_mage_hit",
+      "spriteId": "enemy_mage",
+      "name": "hit",
+      "frames": [
+        "enemy_mage_hit_0",
+        "enemy_mage_hit_1",
+        "enemy_mage_hit_2",
+        "enemy_mage_hit_3",
+        "enemy_mage_hit_4",
+        "enemy_mage_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_mage_die": {
+      "id": "enemy_mage_die",
+      "spriteId": "enemy_mage",
+      "name": "die",
+      "frames": [
+        "enemy_mage_die_0",
+        "enemy_mage_die_1",
+        "enemy_mage_die_2",
+        "enemy_mage_die_3",
+        "enemy_mage_die_4",
+        "enemy_mage_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_knight_idle": {
+      "id": "enemy_knight_idle",
+      "spriteId": "enemy_knight",
+      "name": "idle",
+      "frames": [
+        "enemy_knight_idle_0",
+        "enemy_knight_idle_1",
+        "enemy_knight_idle_2",
+        "enemy_knight_idle_3",
+        "enemy_knight_idle_4",
+        "enemy_knight_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_knight_move": {
+      "id": "enemy_knight_move",
+      "spriteId": "enemy_knight",
+      "name": "move",
+      "frames": [
+        "enemy_knight_move_0",
+        "enemy_knight_move_1",
+        "enemy_knight_move_2",
+        "enemy_knight_move_3",
+        "enemy_knight_move_4",
+        "enemy_knight_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_knight_attack": {
+      "id": "enemy_knight_attack",
+      "spriteId": "enemy_knight",
+      "name": "attack",
+      "frames": [
+        "enemy_knight_attack_0",
+        "enemy_knight_attack_1",
+        "enemy_knight_attack_2",
+        "enemy_knight_attack_3",
+        "enemy_knight_attack_4",
+        "enemy_knight_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_knight_hit": {
+      "id": "enemy_knight_hit",
+      "spriteId": "enemy_knight",
+      "name": "hit",
+      "frames": [
+        "enemy_knight_hit_0",
+        "enemy_knight_hit_1",
+        "enemy_knight_hit_2",
+        "enemy_knight_hit_3",
+        "enemy_knight_hit_4",
+        "enemy_knight_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_knight_die": {
+      "id": "enemy_knight_die",
+      "spriteId": "enemy_knight",
+      "name": "die",
+      "frames": [
+        "enemy_knight_die_0",
+        "enemy_knight_die_1",
+        "enemy_knight_die_2",
+        "enemy_knight_die_3",
+        "enemy_knight_die_4",
+        "enemy_knight_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_ice_golem_idle": {
+      "id": "enemy_ice_golem_idle",
+      "spriteId": "enemy_ice_golem",
+      "name": "idle",
+      "frames": [
+        "enemy_ice_golem_idle_0",
+        "enemy_ice_golem_idle_1",
+        "enemy_ice_golem_idle_2",
+        "enemy_ice_golem_idle_3",
+        "enemy_ice_golem_idle_4",
+        "enemy_ice_golem_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_ice_golem_move": {
+      "id": "enemy_ice_golem_move",
+      "spriteId": "enemy_ice_golem",
+      "name": "move",
+      "frames": [
+        "enemy_ice_golem_move_0",
+        "enemy_ice_golem_move_1",
+        "enemy_ice_golem_move_2",
+        "enemy_ice_golem_move_3",
+        "enemy_ice_golem_move_4",
+        "enemy_ice_golem_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_ice_golem_attack": {
+      "id": "enemy_ice_golem_attack",
+      "spriteId": "enemy_ice_golem",
+      "name": "attack",
+      "frames": [
+        "enemy_ice_golem_attack_0",
+        "enemy_ice_golem_attack_1",
+        "enemy_ice_golem_attack_2",
+        "enemy_ice_golem_attack_3",
+        "enemy_ice_golem_attack_4",
+        "enemy_ice_golem_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_ice_golem_hit": {
+      "id": "enemy_ice_golem_hit",
+      "spriteId": "enemy_ice_golem",
+      "name": "hit",
+      "frames": [
+        "enemy_ice_golem_hit_0",
+        "enemy_ice_golem_hit_1",
+        "enemy_ice_golem_hit_2",
+        "enemy_ice_golem_hit_3",
+        "enemy_ice_golem_hit_4",
+        "enemy_ice_golem_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_ice_golem_die": {
+      "id": "enemy_ice_golem_die",
+      "spriteId": "enemy_ice_golem",
+      "name": "die",
+      "frames": [
+        "enemy_ice_golem_die_0",
+        "enemy_ice_golem_die_1",
+        "enemy_ice_golem_die_2",
+        "enemy_ice_golem_die_3",
+        "enemy_ice_golem_die_4",
+        "enemy_ice_golem_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_imp_idle": {
+      "id": "enemy_imp_idle",
+      "spriteId": "enemy_imp",
+      "name": "idle",
+      "frames": [
+        "enemy_imp_idle_0",
+        "enemy_imp_idle_1",
+        "enemy_imp_idle_2",
+        "enemy_imp_idle_3",
+        "enemy_imp_idle_4",
+        "enemy_imp_idle_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_imp_move": {
+      "id": "enemy_imp_move",
+      "spriteId": "enemy_imp",
+      "name": "move",
+      "frames": [
+        "enemy_imp_move_0",
+        "enemy_imp_move_1",
+        "enemy_imp_move_2",
+        "enemy_imp_move_3",
+        "enemy_imp_move_4",
+        "enemy_imp_move_5"
+      ],
+      "loop": true,
+      "frameDurationMs": null
+    },
+    "enemy_imp_attack": {
+      "id": "enemy_imp_attack",
+      "spriteId": "enemy_imp",
+      "name": "attack",
+      "frames": [
+        "enemy_imp_attack_0",
+        "enemy_imp_attack_1",
+        "enemy_imp_attack_2",
+        "enemy_imp_attack_3",
+        "enemy_imp_attack_4",
+        "enemy_imp_attack_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_imp_hit": {
+      "id": "enemy_imp_hit",
+      "spriteId": "enemy_imp",
+      "name": "hit",
+      "frames": [
+        "enemy_imp_hit_0",
+        "enemy_imp_hit_1",
+        "enemy_imp_hit_2",
+        "enemy_imp_hit_3",
+        "enemy_imp_hit_4",
+        "enemy_imp_hit_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    },
+    "enemy_imp_die": {
+      "id": "enemy_imp_die",
+      "spriteId": "enemy_imp",
+      "name": "die",
+      "frames": [
+        "enemy_imp_die_0",
+        "enemy_imp_die_1",
+        "enemy_imp_die_2",
+        "enemy_imp_die_3",
+        "enemy_imp_die_4",
+        "enemy_imp_die_5"
+      ],
+      "loop": false,
+      "frameDurationMs": null
+    }
+  },
+  "metadata": {
+    "layout": "regular_grid",
+    "grid": {
+      "columns": 12,
+      "rows": 20,
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "marginX": 0,
+      "marginY": 0,
+      "spacingX": 0,
+      "spacingY": 0
+    },
+    "characterBlock": {
+      "columns": 6,
+      "rows": 5,
+      "framesPerAnimation": 6,
+      "animationRows": {
+        "0": "idle (or alternate move — see warnings)",
+        "1": "move",
+        "2": "attack or cast (per sprite)",
+        "3": "hit",
+        "4": "die"
+      }
+    },
+    "coordinateOrigin": "top_left",
+    "confidence": {
+      "textureSize": "confirmed",
+      "gridLayout": "confirmed",
+      "cellSize": "confirmed",
+      "frameCoordinates": "confirmed",
+      "animationLabels": "visual_interpretation",
+      "characterNames": "visual_labels_only",
+      "anchor": "suggested_convention",
+      "frameDurationMs": "unknown"
+    },
+    "analysisMethod": "Measured image size 768x1280; verified exact divisibility into 12x20 cells of 64x64; confirmed non-empty content in all 240 cells; animation roles inferred from pose sequences per 6x5 character block.",
+    "warnings": [
+      "Source file provided as JPEG (JFIF), not PNG. A PNG with near-white background converted to alpha was written as enemies_atlas.png for engine use. Prefer an original lossless PNG if available.",
+      "Character names are visual labels only (not official asset names).",
+      "Animation labels for local rows 0 and 1 (idle vs move) are based on visual interpretation; for some characters both rows look like walk cycles. Verify per character in-game.",
+      "Hit row (local row 3): frames 0–2 are clearly flash/hit; frames 3–5 often resemble recovery toward idle/move. All 6 sheet frames are included; trim if your engine only needs the flash.",
+      "Die row (local row 4): frame 0 is often a white silhouette flash before the fall/dissolve sequence.",
+      "frameDurationMs is unknown and set to null — set by gameplay feel (common starting point for this style: 80–120 ms).",
+      "anchor {x:0.5,y:1.0} is a conventional feet-bottom pivot for top-down sprites, not measured from the image.",
+      "No separate projectile or VFX strips exist as independent cells; archer arrow and golem ice crystals are drawn inside character attack frames.",
+      "No health, damage, speed, or other gameplay stats are included — assign those in game data.",
+      "JPEG compression may leave slight color fringing at cell edges; a clean source PNG would improve quality."
+    ],
+    "validationErrors": []
+  }
+}
